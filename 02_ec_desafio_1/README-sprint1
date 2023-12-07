@@ -1,0 +1,7 @@
+En resumen cree 2 clases, una para administrar los productos, otro para administrar los usuarios.
+
+Puntos importantes:
+ ¬Las imagenes vienen con un alter por las dudas (También para no cargar fotos que no se veran innecesariamente).
+ ¬Cada clase tiene un create(), un read() y un readOne() totalmente funcionales.
+ ¬Cada clase tambien tiene una variable privada a la cual aun asi podemos acceder mediante el read().
+ ¬Agregue un par de console.log's extra para hacer mas digerible la consola.
