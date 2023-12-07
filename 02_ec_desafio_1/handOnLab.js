@@ -7,8 +7,12 @@ class EventManager {
     static #totalGain = 0
 
     constructor(data) {
-        this.id = EventManager.events.length === 0 ? 1 : EventManager.events[EventManager.events.length-1].id+1
+        this.id =
+             EventManager.events.length === 0 
+                ? 1 
+                : EventManager.events[EventManager.events.length-1].id+1
         this.name = data.name
+        this.place = data.place
         this.price = data.price || 10
         this.capacity = data.capacity || 50
         this.date = data.date || new Date()
@@ -16,11 +20,15 @@ class EventManager {
     }
     create(data) {
         const event = {
-            id: EventManager.events.length === 0 ? 1 : EventManager.events[EventManager.events.length-1].id+1,
+            id: 
+                EventManager.events.length === 0 
+                    ? 1 
+                    : EventManager.events[EventManager.events.length-1].id+1,
             name: data.name,
+            place: data.place,
             price: data.price || 10,
             capacity: data.capacity || 50,
-            date: data.date || new Date()
+            date: data.date || new Date(),
         }
         EventManager.events.push(event)
     }
@@ -50,23 +58,22 @@ const events = new EventManager({
     name: "Five Night's at Freddy's",
     place: "showcase"
 })
-Events.create({
+events.create({
     name: "Lord of the Rings",
     place: "showcase"
 })
-Events.create({
+events.create({
     name: "Barbie",
     place: "showcase"
 })
-Events.create({
+events.create({
     name: "The Block",
     place: "showcase"
 })
 
-console.log(EventManager.events)
 events.soldTicket(3, 1)
 events.soldTicket(8, 2)
 
-console.log(events.read(2))
-
+console.log(events.read())
+console.log(events.readById(2))
 console.log(events.getGain())
