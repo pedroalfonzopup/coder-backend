@@ -1,0 +1,50 @@
+[
+  {
+    "id": "76d3e41b644c990a6adfcb96",
+    "name": "fnaf",
+    "place": "showcase",
+    "price": 10,
+    "capacity": 50,
+    "date": "2023-12-15T01:31:35.404Z"
+  },
+  {
+    "id": "69d2158e24a7bad162c92fb2",
+    "name": "fnaf",
+    "place": "showcase",
+    "price": 10,
+    "capacity": 50,
+    "date": "2023-12-15T01:31:35.818Z"
+  },
+  {
+    "id": "0743101bc242bad9ed49afc1",
+    "name": "fnaf",
+    "place": "showcase",
+    "price": 10,
+    "capacity": 50,
+    "date": "2023-12-15T01:31:36.235Z"
+  },
+  {
+    "id": "92585a8b917fd24be9fcecb2",
+    "name": "fnaf",
+    "place": "showcase",
+    "price": 10,
+    "capacity": 50,
+    "date": "2023-12-15T01:31:36.733Z"
+  },
+  {
+    "id": "d33243307242ea964bc6e015",
+    "name": "fnaf",
+    "place": "showcase",
+    "price": 10,
+    "capacity": 50,
+    "date": "2023-12-15T01:31:37.266Z"
+  },
+  {
+    "id": "eb917bb7d3703b33122144a7",
+    "name": "fnaf",
+    "place": "showcase",
+    "price": 10,
+    "capacity": 50,
+    "date": "2023-12-15T01:31:37.751Z"
+  }
+]
