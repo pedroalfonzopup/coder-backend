@@ -1,464 +1,51 @@
 [
-  {
-    "id": "d538e9641a578aaf87e3496c",
-    "title": "Libro",
-    "photo": "Foto de Libro",
-    "price": 150,
-    "stock": 15
-  },
-  {
-    "id": "d7f10080a9585e9cf32aabd8",
-    "title": "Pava",
-    "photo": "https://www.distriecono.com.ar/images/5654_00.jpg",
-    "price": 200,
-    "stock": 15
-  },
-  {
-    "id": "067d61408dfbaafea3e00329",
-    "title": "Silla",
-    "photo": "Foto de Silla",
-    "price": 400,
-    "stock": 15
-  },
-  {
-    "id": "d379beb42cc19f17c1565a61",
-    "title": "Termo",
-    "photo": "Foto de Termo",
-    "price": 250,
-    "stock": 15
-  },
-  {
-    "id": "904d3fd8adcf5b6165f9b91e",
-    "title": "Mate",
-    "photo": "Foto de Mate",
-    "price": 100,
-    "stock": 15
-  },
-  {
-    "id": "9b6ad33d45c6e53d832bf4da",
-    "title": "Teclado",
-    "photo": "Foto de Teclado",
-    "price": 500,
-    "stock": 15
-  },
-  {
-    "id": "0c7651264cdddb8d0815b907",
-    "title": "Libro",
-    "photo": "Foto de Libro",
-    "price": 150,
-    "stock": 15
-  },
-  {
-    "id": "e972cffb50b1e09843b7ed23",
-    "title": "Pava",
-    "photo": "https://www.distriecono.com.ar/images/5654_00.jpg",
-    "price": 200,
-    "stock": 15
-  },
-  {
-    "id": "6df988151e31822752b16449",
-    "title": "Silla",
-    "photo": "Foto de Silla",
-    "price": 400,
-    "stock": 15
-  },
-  {
-    "id": "8076dd645aabcb870f65dc9d",
-    "title": "Termo",
-    "photo": "Foto de Termo",
-    "price": 250,
-    "stock": 15
-  },
-  {
-    "id": "7b8e619228dd9930031486f5",
-    "title": "Mate",
-    "photo": "Foto de Mate",
-    "price": 100,
-    "stock": 15
-  },
-  {
-    "id": "432941e3f95b8d2d02a7ae8b",
-    "title": "Teclado",
-    "photo": "Foto de Teclado",
-    "price": 500,
-    "stock": 15
-  },
-  {
-    "id": "9564bf3baea45f7116e4576f",
-    "title": "Libro",
-    "photo": "Foto de Libro",
-    "price": 150,
-    "stock": 15
-  },
-  {
-    "id": "e9ae6726c0ba1afbd242c95e",
-    "title": "Pava",
-    "photo": "https://www.distriecono.com.ar/images/5654_00.jpg",
-    "price": 200,
-    "stock": 15
-  },
-  {
-    "id": "e87e480ab8399c6b0f7b5fb0",
-    "title": "Silla",
-    "photo": "Foto de Silla",
-    "price": 400,
-    "stock": 15
-  },
-  {
-    "id": "0062bc854d264463dfab9362",
-    "title": "Termo",
-    "photo": "Foto de Termo",
-    "price": 250,
-    "stock": 15
-  },
-  {
-    "id": "fd7941c504f4551663e3ec83",
-    "title": "Mate",
-    "photo": "Foto de Mate",
-    "price": 100,
-    "stock": 15
-  },
-  {
-    "id": "d73e8e81b569267d578165a3",
-    "title": "Teclado",
-    "photo": "Foto de Teclado",
-    "price": 500,
-    "stock": 15
-  },
-  {
-    "id": "61ba3a52358d6d4afbaa27f9",
-    "title": "Libro",
-    "photo": "Foto de Libro",
-    "price": 150,
-    "stock": 15
-  },
-  {
-    "id": "68782cb5dae739cb1a101698",
-    "title": "Pava",
-    "photo": "https://www.distriecono.com.ar/images/5654_00.jpg",
-    "price": 200,
-    "stock": 15
-  },
-  {
-    "id": "31e2dc127ae32d0e66a4eebe",
-    "title": "Silla",
-    "photo": "Foto de Silla",
-    "price": 400,
-    "stock": 15
-  },
-  {
-    "id": "be8aa888eef9ef8b16d03410",
-    "title": "Termo",
-    "photo": "Foto de Termo",
-    "price": 250,
-    "stock": 15
-  },
-  {
-    "id": "ca836d4e24e03d7715c2baad",
-    "title": "Mate",
-    "photo": "Foto de Mate",
-    "price": 100,
-    "stock": 15
-  },
-  {
-    "id": "391ad5575f7deae90ff16362",
-    "title": "Teclado",
-    "photo": "Foto de Teclado",
-    "price": 500,
-    "stock": 15
-  },
-  {
-    "id": "bdc750725f6e638deb9e97f7",
-    "title": "Libro",
-    "photo": "Foto de Libro",
-    "price": 150,
-    "stock": 15
-  },
-  {
-    "id": "f8654f9be7698b3af1e7b8cb",
-    "title": "Pava",
-    "photo": "https://www.distriecono.com.ar/images/5654_00.jpg",
-    "price": 200,
-    "stock": 15
-  },
-  {
-    "id": "89cfe2ab524fdd9badc2e98f",
-    "title": "Silla",
-    "photo": "Foto de Silla",
-    "price": 400,
-    "stock": 15
-  },
-  {
-    "id": "939c3e1409091d4b947f863c",
-    "title": "Termo",
-    "photo": "Foto de Termo",
-    "price": 250,
-    "stock": 15
-  },
-  {
-    "id": "42155a5e0d620c3468efcaa2",
-    "title": "Mate",
-    "photo": "Foto de Mate",
-    "price": 100,
-    "stock": 15
-  },
-  {
-    "id": "71c3b96c47423d25c6bbfe49",
-    "title": "Teclado",
-    "photo": "Foto de Teclado",
-    "price": 500,
-    "stock": 15
-  },
-  {
-    "id": "d3295ec06f15ef49ec197f9a",
-    "title": "Libro",
-    "photo": "Foto de Libro",
-    "price": 150,
-    "stock": 15
-  },
-  {
-    "id": "abc4e1e9e828c44a74aad67c",
-    "title": "Pava",
-    "photo": "https://www.distriecono.com.ar/images/5654_00.jpg",
-    "price": 200,
-    "stock": 15
-  },
-  {
-    "id": "14bf3ddc51dad4adf01a857b",
-    "title": "Silla",
-    "photo": "Foto de Silla",
-    "price": 400,
-    "stock": 15
-  },
-  {
-    "id": "cebb0b007ed22086f0c48285",
-    "title": "Termo",
-    "photo": "Foto de Termo",
-    "price": 250,
-    "stock": 15
-  },
-  {
-    "id": "7916a7834953567a66b60c55",
-    "title": "Mate",
-    "photo": "Foto de Mate",
-    "price": 100,
-    "stock": 15
-  },
-  {
-    "id": "560e2751f102a9ab9a548b75",
-    "title": "Teclado",
-    "photo": "Foto de Teclado",
-    "price": 500,
-    "stock": 15
-  },
-  {
-    "id": "5daf2ffbf7ae6bf62cc27ea1",
-    "title": "Libro",
-    "photo": "Foto de Libro",
-    "price": 150,
-    "stock": 15
-  },
-  {
-    "id": "baf99ac8cf7133cd036ed39e",
-    "title": "Pava",
-    "photo": "https://www.distriecono.com.ar/images/5654_00.jpg",
-    "price": 200,
-    "stock": 15
-  },
-  {
-    "id": "d872b12af70f0879c78ef636",
-    "title": "Silla",
-    "photo": "Foto de Silla",
-    "price": 400,
-    "stock": 15
-  },
-  {
-    "id": "d0267bbfbad4e4dd13722ede",
-    "title": "Termo",
-    "photo": "Foto de Termo",
-    "price": 250,
-    "stock": 15
-  },
-  {
-    "id": "b97e749a174a5946fe79078e",
-    "title": "Mate",
-    "photo": "Foto de Mate",
-    "price": 100,
-    "stock": 15
-  },
-  {
-    "id": "f019a4e66660483f4eca17de",
-    "title": "Teclado",
-    "photo": "Foto de Teclado",
-    "price": 500,
-    "stock": 15
-  },
-  {
-    "id": "aea3ffcf4793b561eb9672e3",
-    "title": "Libro",
-    "photo": "Foto de Libro",
-    "price": 150,
-    "stock": 15
-  },
-  {
-    "id": "a1606b2b4c77fa779b985f73",
-    "title": "Pava",
-    "photo": "https://www.distriecono.com.ar/images/5654_00.jpg",
-    "price": 200,
-    "stock": 15
-  },
-  {
-    "id": "8eb02892bc53d7cf55c37098",
-    "title": "Silla",
-    "photo": "Foto de Silla",
-    "price": 400,
-    "stock": 15
-  },
-  {
-    "id": "c778604999cc53f4777651b9",
-    "title": "Termo",
-    "photo": "Foto de Termo",
-    "price": 250,
-    "stock": 15
-  },
-  {
-    "id": "52fad027acb8c6117d515c87",
-    "title": "Mate",
-    "photo": "Foto de Mate",
-    "price": 100,
-    "stock": 15
-  },
-  {
-    "id": "d979d9afadcb53befb588120",
-    "title": "Teclado",
-    "photo": "Foto de Teclado",
-    "price": 500,
-    "stock": 15
-  },
-  {
-    "id": "5201ee6d88c5527e64f92ba1",
-    "title": "Libro",
-    "photo": "Foto de Libro",
-    "price": 150,
-    "stock": 15
-  },
-  {
-    "id": "2cc846067e401710812fdd31",
-    "title": "Pava",
-    "photo": "https://www.distriecono.com.ar/images/5654_00.jpg",
-    "price": 200,
-    "stock": 15
-  },
-  {
-    "id": "6c00ad887564216cac39e4f3",
-    "title": "Silla",
-    "photo": "Foto de Silla",
-    "price": 400,
-    "stock": 15
-  },
-  {
-    "id": "79adeb430adb40a04b475f0c",
-    "title": "Termo",
-    "photo": "Foto de Termo",
-    "price": 250,
-    "stock": 15
-  },
-  {
-    "id": "67771aab00cccc1139862d7c",
-    "title": "Mate",
-    "photo": "Foto de Mate",
-    "price": 100,
-    "stock": 15
-  },
-  {
-    "id": "3840cbe00c3d267774cc7eea",
-    "title": "Teclado",
-    "photo": "Foto de Teclado",
-    "price": 500,
-    "stock": 15
-  },
-  {
-    "id": "3669465e7448a174821eb2e7",
-    "title": "Libro",
-    "photo": "Foto de Libro",
-    "price": 150,
-    "stock": 15
-  },
-  {
-    "id": "3e047075ee30f0e2d1df5fd4",
-    "title": "Pava",
-    "photo": "https://www.distriecono.com.ar/images/5654_00.jpg",
-    "price": 200,
-    "stock": 15
-  },
-  {
-    "id": "ca85715c25131f5a4abdfaf8",
-    "title": "Silla",
-    "photo": "Foto de Silla",
-    "price": 400,
-    "stock": 15
-  },
-  {
-    "id": "ea1937c552d562a3faa2984d",
-    "title": "Termo",
-    "photo": "Foto de Termo",
-    "price": 250,
-    "stock": 15
-  },
-  {
-    "id": "c70909fa53c5ee99e8922017",
-    "title": "Mate",
-    "photo": "Foto de Mate",
-    "price": 100,
-    "stock": 15
-  },
-  {
-    "id": "d5fa0516c8d6060fa1a4922e",
-    "title": "Teclado",
-    "photo": "Foto de Teclado",
-    "price": 500,
-    "stock": 15
-  },
-  {
-    "id": "31d1b24592a8c5193248078f",
-    "title": "Libro",
-    "photo": "Foto de Libro",
-    "price": 150,
-    "stock": 15
-  },
-  {
-    "id": "0f8af0125633abe250c120f4",
-    "title": "Pava",
-    "photo": "https://www.distriecono.com.ar/images/5654_00.jpg",
-    "price": 200,
-    "stock": 15
-  },
-  {
-    "id": "3be862872bd103b3cf4ca5e1",
-    "title": "Silla",
-    "photo": "Foto de Silla",
-    "price": 400,
-    "stock": 15
-  },
-  {
-    "id": "314f5f0b81624743825b186a",
-    "title": "Termo",
-    "photo": "Foto de Termo",
-    "price": 250,
-    "stock": 15
-  },
-  {
-    "id": "474bf6732a9f68969438e439",
-    "title": "Mate",
-    "photo": "Foto de Mate",
-    "price": 100,
-    "stock": 15
-  },
-  {
-    "id": "9f4b57c12751036528e03668",
-    "title": "Teclado",
-    "photo": "Foto de Teclado",
-    "price": 500,
-    "stock": 15
-  }
+	{
+		"id": 1,
+		"title": "Pava",
+		"photo": "https://www.distriecono.com.ar/images/5654_00.jpg",
+		"price": 200,
+		"stock": 15
+	},
+	{
+		"id": 2,
+		"title": "Silla",
+		"photo": "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
+		"price": 400,
+		"stock": 15
+	},
+	{
+		"id": 3,
+		"title": "Termo",
+		"photo": "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
+		"price": 250,
+		"stock": 15
+	},
+	{
+		"id": 4,
+		"title": "Mate",
+		"photo": "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
+		"price": 100,
+		"stock": 15
+	},
+	{
+		"id": 5,
+		"title": "Teclado",
+		"photo": "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
+		"price": 500,
+		"stock": 15
+	},
+	{
+		"id": 6,
+		"title": "Monitor",
+		"photo": "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
+		"price": 245,
+		"stock": 15
+	},
+	{
+		"id": 7,
+		"title": "Pala",
+		"photo": "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
+		"price": 100,
+		"stock": 15
+	}
 ]
