@@ -1,0 +1,51 @@
+[
+	{
+		"id": "124572d90a24d4bc5b6f3ccc",
+		"title": "Pava",
+		"photo": "https://www.distriecono.com.ar/images/5654_00.jpg",
+		"price": 200,
+		"stock": 15
+	},
+	{
+		"id": "7a0e1aa2c5606334769460fa",
+		"title": "Silla",
+		"photo": "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
+		"price": 400,
+		"stock": 15
+	},
+	{
+		"id": "d4d073a7fff8fdb76c863cc4",
+		"title": "Termo",
+		"photo": "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
+		"price": 250,
+		"stock": 15
+	},
+	{
+		"id": "30c4da0d2f65c99c0a614480",
+		"title": "Mate",
+		"photo": "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
+		"price": 100,
+		"stock": 15
+	},
+	{
+		"id": "a91206684e9d70b7007a534f",
+		"title": "Teclado",
+		"photo": "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
+		"price": 500,
+		"stock": 15
+	},
+	{
+		"id": "7be71bc88a4af07a416894a2",
+		"title": "Monitor",
+		"photo": "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
+		"price": 245,
+		"stock": 15
+	},
+	{
+		"id": "5d500613721c3bf8bee45487",
+		"title": "Pala",
+		"photo": "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
+		"price": 100,
+		"stock": 15
+	}
+]
