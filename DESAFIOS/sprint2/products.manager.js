@@ -95,7 +95,7 @@ const product3 = {
 const product4 = {
   title: "Mate",
   price: 100,
-    photo: "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
+  photo: "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
   stock: 15
 }
 const product5 = {
