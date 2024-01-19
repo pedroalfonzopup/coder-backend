@@ -1,13 +1,13 @@
-import { Router } from "express"
+import { Router } from "express";
 
-const registerRouter = Router()
+const registerRouter = Router();
 
-registerRouter.get("/register", (req, res, next) => {
-    try {
-        return res.render("register", { title: "REGISTER" })
-    } catch (error) {
-        next(error)
-    }
-})
+registerRouter.get("/", (req, res, next) => {
+  try {
+    return res.render("register", { title: "REGISTER" });
+  } catch (error) {
+    next(error);
+  }
+});
 
-export default registerRouter
+export default registerRouter;
