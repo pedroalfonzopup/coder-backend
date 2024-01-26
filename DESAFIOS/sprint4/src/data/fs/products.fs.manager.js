@@ -21,8 +21,9 @@ class ProductManager {
     this.init();
   }
   async create(data) {
+
+    console.log(data)
     const productsFromJson = await fs.promises.readFile("./src/data/fs/files/products.json")
-    console.log("READFILE" +productsFromJson)
     const productsArray = JSON.parse(productsFromJson)
     console.log("ARRAY A PUSHEAR" +productsArray)
     try {
