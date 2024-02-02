@@ -4,13 +4,29 @@ import orders from "../../data/fs/orders.fs.manager.js";
 const ordersRouter = Router();
 
 // ENDPOINTS
-ordersRouter.get("/:uid", async (req, res, next) => {
+ordersRouter.get("/", async (req, res, next) => {
   try {
-    const { uid } = req.params;
-    const userOrders = await orders.readByUser(uid);
+    let filter = {}
+    if (req.query.user_id) {
+      filter = { user_id: req.query.user_id }
+    }
+    const all = await orders.read({filter})
     return res.json({
       statusCode: 200,
-      response: userOrders,
+      response: all
+    })
+  } catch (error) {
+    return next(error)
+  }
+})
+
+ordersRouter.get("/:oid", async (req, res, next) => {
+  try {
+    const { oid } = req.params;
+    const one = await orders.readOne(oid);
+    return res.json({
+      statusCode: 200,
+      response: one,
     });
   } catch (error) {
     return next(error);
@@ -30,10 +46,11 @@ ordersRouter.post("/", async (req, res, next) => {
   }
 });
 
-ordersRouter.put("/:oid/:quantity/:state", async (req, res, next) => {
+ordersRouter.put("/:oid", async (req, res, next) => {
   try {
-    const { oid, quantity, state } = req.params;
-    const response = await orders.update(oid, quantity, state);
+    const { oid } = req.params;
+    const data = req.body
+    const response = await orders.update(oid, data);
     return res.json({
       statusCode: 200,
       response: "order with id " + response + " updated successfully",

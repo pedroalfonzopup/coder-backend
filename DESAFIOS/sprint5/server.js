@@ -1,5 +1,8 @@
+
 import express from "express";
 import __dirname from "./utils.js";
+import dbConnection from "./src/utils/db.js";
+
 import morgan from "morgan";
 import router from "./src/routers/index.router.js";
 import errorHandler from "./src/middlewares/errorHandler.mid.js";
@@ -11,7 +14,10 @@ import products from "./src/data/fs/products.fs.manager.js";
 
 const server = express();
 const PORT = 8080;
-const ready = () => console.log("Server ready on port " + PORT);
+const ready = () => {
+  console.log("Server ready on port " + PORT);
+  dbConnection()
+}
 const httpServer = createServer(server);
 const socketServer = new Server(httpServer);
 httpServer.listen(PORT, ready);

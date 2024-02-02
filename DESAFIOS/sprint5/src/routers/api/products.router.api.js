@@ -1,12 +1,13 @@
 import { Router } from "express";
-import products from "../../data/fs/products.fs.manager.js";
+//import products from "../../data/fs/products.fs.manager.js";
+import { products } from "../../data/mongo/manager.mongo.js"
 
 const productsRouter = Router();
 
 // ENDPOINTS
 productsRouter.get("/", async (req, res, next) => {
   try {
-    const all = await products.read();
+    const all = await products.read({});
     return res.json({
       statusCode: 200,
       response: all,
@@ -42,13 +43,14 @@ productsRouter.post("/", async (req, res, next) => {
   }
 });
 
-productsRouter.put("/:pid/:data", async (req, res, next) => {
+productsRouter.put("/:pid", async (req, res, next) => {
   try {
-    const { pid, data } = req.params;
+    const { pid } = req.params;
+    const data = req.body
     const response = await products.update(data, pid);
     return res.json({
       statusCode: 200,
-      response: "product with id " + response + " updated successfully",
+      response: response
     });
   } catch (error) {
     return next(error);
@@ -61,7 +63,7 @@ productsRouter.delete("/:pid", async (req, res, next) => {
     const response = await products.destroy(pid);
     return res.json({
       statusCode: 200,
-      response: "product by the id: " + response + "successfully deleted",
+      response: response
     });
   } catch (error) {
     return next(error);
