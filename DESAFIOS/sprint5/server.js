@@ -1,4 +1,4 @@
-
+import "dotenv/config.js";
 import express from "express";
 import __dirname from "./utils.js";
 import dbConnection from "./src/utils/db.js";

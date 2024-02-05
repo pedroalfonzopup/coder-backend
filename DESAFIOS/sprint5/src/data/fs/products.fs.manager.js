@@ -124,14 +124,14 @@ class ProductManager {
 
 const products = new ProductManager("./src/data/fs/files/products.json");
 
-console.log(
-  await products.create({
-    title: "Calculadora",
-    price: 200,
-    photo:
-      "https://http2.mlstatic.com/D_NQ_NP_2X_978839-MLA43556248580_092020-F.webp",
-    stock: 25,
-  })
-);
+// console.log(
+//   await products.create({
+//     title: "Calculadora",
+//     price: 200,
+//     photo:
+//       "https://http2.mlstatic.com/D_NQ_NP_2X_978839-MLA43556248580_092020-F.webp",
+//     stock: 25,
+//   })
+// );
 
 export default products;
