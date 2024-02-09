@@ -1,11 +1,11 @@
 {
-  "name": "sprint4",
+  "name": "challenge2",
   "version": "1.0.0",
-  "description": "Websocket and Handlebars",
+  "description": "Segunda Pre-Entrega",
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && sprint4 1",
+    "test": "echo \"Error: no test specified\" && challenge2 1",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
