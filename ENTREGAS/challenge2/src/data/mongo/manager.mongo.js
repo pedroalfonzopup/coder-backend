@@ -36,11 +36,6 @@ class MongoManager {
     async read({ filter, sortAndPaginate }) {
         try {
             const all = await this.model.paginate(filter, sortAndPaginate)
-            if (all.totalDocs === 0) {
-                const error = new Error("There are not items")
-                error.statusCode = 404
-                throw error
-            }
             return all
         } catch (error) {
             throw error
@@ -49,7 +44,7 @@ class MongoManager {
 
     async readOne(id) {
         try {
-            const one = await this.model.findById(id).lean()
+            const one = await this.model.findById(id)
             if (!one) {
                 const error = new Error("There isn't item")
                 error.statusCode = 404
