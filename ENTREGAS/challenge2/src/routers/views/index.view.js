@@ -8,10 +8,17 @@ const viewsRouter = Router();
 
 viewsRouter.get("/", async (req, res, next) => {
   try {
-    const AllProducts = await products.read();
-    return res.render("index", { title: "INDEX", products: AllProducts });
+    const filter = {}
+    const sortAndPaginate = {
+      limit: req.query.limit || 20,
+      page: req.query.page || 1,
+      sort: { title: 1 }
+    }
+    
+    const all = await products.read({ filter, sortAndPaginate });
+    return res.render("index", { title: "INDEX", products: all })
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 

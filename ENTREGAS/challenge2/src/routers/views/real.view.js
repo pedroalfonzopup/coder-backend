@@ -5,10 +5,17 @@ const realRouter = Router();
 
 realRouter.get("/", async (req, res, next) => {
   try {
-    const AllProducts = await products.read();
-    return res.render("real", { products: AllProducts, title: "REAL" });
+    const filter = {}
+    const sortAndPaginate = {
+      limit: req.query.limit || 20,
+      page: req.query.page || 1,
+      sort: { title: 1 }
+    }
+    
+    const all = await products.read({ filter, sortAndPaginate });
+    return res.render("real", { title: "REAL", products: all })
   } catch (error) {
-    next(error);
+    return next(error);
   }
 });
 

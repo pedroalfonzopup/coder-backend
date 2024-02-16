@@ -14,6 +14,10 @@ const schema = new Schema({
     },
 },{ timestamps: true })
 
+//65c01e570ab9c0aa6c2a19f2  //IGNA BACAN
+//65c01e980ab9c0aa6c2a1a01  //Balanza
+//65c01e980ab9c0aa6c2a19ff  //Equipo Mate
+//65c01e980ab9c0aa6c2a19fb  //Mate
 schema.plugin(mongoosePaginate)
 
 const Order = model(collection, schema)

@@ -15,24 +15,6 @@ class MongoManager {
             throw error
         }
     }
-    // async read(obj) {
-    //     try {
-    //         let { filter, order } = obj
-    //         const all = await this.model
-    //             .find(filter)
-    //             .populate("user_id")
-    //             .populate("product_id")
-    //             .sort(order)
-    //         if (all.lenght === 0) {
-    //             const error = new Error("There are no items")
-    //             error.statusCode = 404
-    //             throw error
-    //         }
-    //         return all
-    //     } catch (error) {
-    //         throw error
-    //     }
-    // }
     async read({ filter, sortAndPaginate }) {
         try {
             const all = await this.model.paginate(filter, sortAndPaginate)
