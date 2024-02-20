@@ -1,5 +1,5 @@
 import { Router } from "express";
-import products from "../../data/fs/products.fs.manager.js";
+import { products } from "../../data/mongo/manager.mongo.js"
 
 const realRouter = Router();
 

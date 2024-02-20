@@ -1,6 +1,7 @@
 import User from "./models/user.model.js"
 import Product from "./models/product.model.js"
 import Order from "./models/order.model.js"
+import { Types } from "mongoose"
 
 class MongoManager {
     constructor(model) {
@@ -14,16 +15,29 @@ class MongoManager {
             throw error
         }
     }
-    async read(obj) {
+    // async read(obj) {
+    //     try {
+    //         let { filter, order } = obj
+    //         const all = await this.model
+    //             .find(filter)
+    //             .populate("user_id")
+    //             .populate("product_id")
+    //             .sort(order)
+    //         if (all.lenght === 0) {
+    //             const error = new Error("There are no items")
+    //             error.statusCode = 404
+    //             throw error
+    //         }
+    //         return all
+    //     } catch (error) {
+    //         throw error
+    //     }
+    // }
+    async read({ filter, sortAndPaginate }) {
         try {
-            let { filter, order } = obj
-            const all = await this.model
-                .find(filter)
-                .populate("user_id")
-                .populate("product_id")
-                .sort(order)
-            if (all.lenght === 0) {
-                const error = new Error("There are no items")
+            const all = await this.model.paginate(filter, sortAndPaginate)
+            if (all.totalDocs === 0) {
+                const error = new Error("There are not items")
                 error.statusCode = 404
                 throw error
             }
@@ -32,9 +46,10 @@ class MongoManager {
             throw error
         }
     }
+
     async readOne(id) {
         try {
-            const one = await this.model.findById(id)
+            const one = await this.model.findById(id).lean()
             if (!one) {
                 const error = new Error("There isn't item")
                 error.statusCode = 404
@@ -80,6 +95,45 @@ class MongoManager {
                 throw error
             }
             return one
+        } catch (error) {
+            throw error
+        }
+    }
+    async report(uid) {
+        try {
+            const report = await this.model.aggregate([
+                { $match: { user_id: new Types.ObjectId(uid) } },
+                {
+                    $lookup: {
+                        from: "products",
+                        foreignField: "_id",
+                        localFied: "product_id",
+                        as: "product_id",
+                    }
+                },
+                {
+                    $replaceRoot: {
+                        newRoot: {
+                            $mergeObjects: [
+                                { $arrayElemAt: ["$product_id", 0] },
+                                "$$ROOT"
+                            ],
+                        },
+                    }
+                },
+                { $set: { subtotal: { $multiply: ["$price", "quantity"] } } },
+                { $group: { _id: "$user_id", total: { $sum: "$subtotal" } } },
+                { 
+                    $project: {
+                        _id: false,
+                        user_id: "$_id",
+                        total: "$total",
+                        date: new Date(),
+                        currency: "USD",
+                    } 
+                }
+            ])
+            return report
         } catch (error) {
             throw error
         }

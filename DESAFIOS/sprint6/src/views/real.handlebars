@@ -1,0 +1,23 @@
+<main class="Real">
+    <h1 class="Real-welcome">REAL TIME VISUALIZER</h1>
+    <h3 class="Real-paragraph">See our products in real time!</h3>
+    {{!-- <div 
+        class="Real-products"
+        id="RealProducts"
+    ></div> --}}
+    <section>
+        {{#each products}}
+            <div class="Product">
+                <div class="Product-container">
+                    <img class="Product-container_img" src="{{this.photo}}" alt="{{this.title}}">
+                </div>
+                <h5 class="Product-name">{{this.title}}</h5>
+                <h5 class="Product-price"> ${{this.price}} </h5>
+            </div>
+        {{/each}}   
+    </section>
+    
+
+</main>
+{{!-- <script src="/socket.io/socket.io.js"></script> --}}
+<script src="/real.js"></script>

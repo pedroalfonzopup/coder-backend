@@ -7,7 +7,14 @@ const productsRouter = Router();
 // ENDPOINTS
 productsRouter.get("/", async (req, res, next) => {
   try {
-    const all = await products.read({});
+    const filter = {}
+    const sortAndPaginate = {
+      limit: req.query.limit || 20,
+      page: req.query.page || 1,
+      sort: { title: 1 }
+    }
+    
+    const all = await products.read({ filter, sortAndPaginate });
     return res.json({
       statusCode: 200,
       response: all,
