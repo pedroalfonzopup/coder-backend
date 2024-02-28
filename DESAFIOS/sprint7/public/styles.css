@@ -65,6 +65,17 @@
     color: bisque;
 }
 
+.MyNavbar-signout {
+    width: 100px;
+    background-color: rgb(116, 4, 4);
+    border-radius: 5%;
+    color: bisque;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .MyFooter {
     background-color: rgb(45, 0, 56);
     width: 100%;
@@ -510,4 +521,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* GOOGLE */
+
+.Google-auth_button{
+    width: 250px;
+    background-color: rgb(116, 4, 4);
+    border-radius: 5%;
+    color: bisque;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,9 +1,7 @@
 import { Router } from "express";
 import { products } from "../../data/mongo/manager.mongo.js"
-import realRouter from "./real.view.js";
-import registerRouter from "./register.view.js";
-import formRouter from "./form.view.js";
-import loginRouter from "./login.view.js";
+import sessionsRouter from "./sessions.view.js"
+import productsRouter from "./products.view.js";
 
 const viewsRouter = Router();
 
@@ -23,9 +21,7 @@ viewsRouter.get("/", async (req, res, next) => {
   }
 });
 
-viewsRouter.use("/form", formRouter);
-viewsRouter.use("/real", realRouter);
-viewsRouter.use("/register", registerRouter);
-viewsRouter.use("/login", loginRouter)
+viewsRouter.use("/products", productsRouter)
+viewsRouter.use("/sessions", sessionsRouter)
 
 export default viewsRouter;

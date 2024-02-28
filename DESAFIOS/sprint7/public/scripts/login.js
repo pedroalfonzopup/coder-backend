@@ -1,19 +1,23 @@
-console.log("socket");
-
-const socket = io();
-
-document.querySelector("#login").addEventListener("click", (event) => {
-  event.preventDefault();
-  const email = document.querySelector("#login-email").value;
-  const password = document.querySelector("#login-password").value;
-
-  const data = {};
-
-  email && (data.email = email);
-  password && (data.password = password);
-
-  socket.emit("loginUser", data);
+const selector = document.querySelector("#login");
+selector.addEventListener("click", async () => {
+  try {
+    const data = {
+      email: document.querySelector("#email").value,
+      password: document.querySelector("#password").value,
+    };
+    const opts = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    };
+    let response = await fetch("/api/sessions/login", opts);
+    response = await response.json();
+    console.log(response);
+    alert(response.message);
+    if (response.statusCode === 200) {
+      location.replace("/");
+    }
+  } catch (error) {
+    alert(error.message);
+  }
 });
-
-socket.on("loginFailed", (response) => { alert(response)})
-socket.on("loginSucess", (response) => { alert(response)})
