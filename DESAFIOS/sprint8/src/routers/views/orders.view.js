@@ -24,6 +24,7 @@ export default class OrderRouter extends CustomRouter {
                 orders: all.docs,
                 next: all.nextPage,
                 prev: all.prevPage,
+                filter: req.querry.title,
             });
             } catch (error) {
               return res.render("orders", {
