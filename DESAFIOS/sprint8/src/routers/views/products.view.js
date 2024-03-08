@@ -19,7 +19,13 @@ export default class ProductsRouter extends CustomRouter {
         sortAndPaginate.sort.title = "desc";
       }
       const all = await products.read({ filter, sortAndPaginate })
-        return res.render("real", { title: "REAL", products: all.docs })
+        return res.render("real", { 
+          title: "REAL", 
+          products: all.docs,
+          filter: req.query.title,
+          next: all.nextPage,
+          prev: all.prevPage,
+         })
       } catch (error) {
         return next(error)
       }
