@@ -3,7 +3,7 @@ import { products } from "../../data/mongo/manager.mongo.js";
 
 export default class ProductsRouter extends CustomRouter {
   init() {
-    this.read("/real", ["PUBLIC"], async (req, res, nect) => {
+    this.read("/real", ["PUBLIC"], async (req, res, next) => {
       try {
         const sortAndPaginate = {
           limit: req.query.limit || 10,

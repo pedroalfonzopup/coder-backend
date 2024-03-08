@@ -1,0 +1,39 @@
+<main class="Orders">
+    <h1 class="Orders-welcome">MY CART</h1>
+    {{#if message}}
+        message
+    {{else}}
+        <section class="CartItem">
+        {{#each orders}}
+            <article class="CartItem-container">
+                <div class="CartItem-img_container">
+                    <img class="CartItem-img" src={{this.product_id.photo}} alt="{{this.product_id.title}}">
+                </div>
+                <p>{{this.product_id.title}}</p>
+                <P>USD {{this.product_id.price}}</P>
+                <button
+                    id="deleteFromCart"
+                    class="CartItem-button_delete"
+                >X</button>
+            </article>
+        {{/each}}
+        <span class="Paginate-box">
+            {{#if prev}}
+                <a
+                class="Paginate-prev_button"
+                href="/?title={{filter}}&page={{prev}}"
+                >PREV</a>
+            {{/if}}
+            {{#if next}}
+                <a
+                class="Paginate-next_button"
+                href="/?title={{filter}}&page={{next}}"
+                >NEXT</a>
+            {{/if}}
+        </span>
+        </section>
+    {{/if}}
+    
+</main>
+
+<script src="/script/orders.js"></script>
