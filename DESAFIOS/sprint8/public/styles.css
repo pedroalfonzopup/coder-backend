@@ -523,6 +523,104 @@
     justify-content: center;
 }
 
+/* CLASES ORDERS.HANDLEBARS */
+
+.Orders {
+    background-color: rgb(101, 83, 201);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4px;
+}
+
+.Orders-welcome {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(23, 0, 29);
+    border-radius: 25%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Orders-header {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 3%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Orders-header_h3 {
+    padding: 3px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Orders-header_spacer {
+    padding: 3px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Cart-container {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 3%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Cart-img_container {
+    width: 100px;
+}
+
+.Cart-img {
+    width: 100%;
+}
+
+.CartItem-h3 {
+    padding: 3px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.DeleteItem {
+    width: 100px;
+    background-color: rgb(116, 4, 4);
+    border-radius: 5%;
+    color: bisque;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* PAGINATE */
+
+
+
 /* GOOGLE */
 
 .Google-auth_button{
