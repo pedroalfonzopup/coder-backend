@@ -1,11 +1,11 @@
 {
-  "name": "sprint7",
+  "name": "sprint8",
   "version": "1.0.0",
-  "description": "sprint7",
+  "description": "sprint8",
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && sprint7 1",
+    "test": "echo \"Error: no test specified\" && sprint8 1",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
@@ -16,22 +16,23 @@
     "bcrypt": "^5.1.1",
     "connect-mongo": "^5.1.0",
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "crypto": "^1.0.1",
-    "dotenv": "^16.4.1",
-    "express": "^4.18.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
     "express-handlebars": "^7.1.2",
     "express-session": "^1.18.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.1.1",
+    "mongoose": "^8.2.2",
     "mongoose-paginate-v2": "^1.8.0",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
-    "nodemon": "^3.0.2",
+    "nodemon": "^3.1.0",
     "passport": "^0.7.0",
     "passport-google-oauth2": "^0.2.0",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
     "session-file-store": "^1.5.0",
-    "socket.io": "^4.7.4"
+    "socket.io": "^4.7.5"
   }
 }

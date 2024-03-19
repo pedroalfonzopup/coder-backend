@@ -4,6 +4,7 @@ import __dirname from "./utils.js";
 import dbConnection from "./src/utils/db.js";
 import socketUtils from "./src/utils/socket.util.js"
 
+import cors from "cors"
 import cookieParser from "cookie-parser";
 import MongoStore from "connect-mongo";
 import expressSession from "express-session"
@@ -49,6 +50,14 @@ server.use(
     })
   })
 )
+// Chequear
+server.use(
+  cors({
+    origin: true,
+    credentials: true
+}) 
+)
+
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 server.use(express.static(__dirname + "/public"));

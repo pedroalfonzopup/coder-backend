@@ -11,7 +11,8 @@ const schema = new Schema(
             type: String,
             default: "ttps://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png"
         },
-        age: { type: Number }
+        age: { type: Number },
+        role: { type: Number, required: true }
     }, { timestamps: true }
 )
 

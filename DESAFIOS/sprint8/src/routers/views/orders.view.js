@@ -6,7 +6,7 @@ import passCallback from "../../middlewares/passCallBack.mid.js"
 
 export default class OrderRouter extends CustomRouter {
     init() {
-        ("/", ["PUBLIC"], passCallback("jwt"), async (req, res, next) => {
+        this.read("/", ["PUBLIC"], passCallback("jwt"), async (req, res, next) => {
             try {
               const sortAndPaginate = {
                 limit: req.query.limit || 5,
