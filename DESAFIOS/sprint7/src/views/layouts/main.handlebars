@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/public/scripts/signout.js"></script>
+    <title>{{ title }}</title>
+</head>
+<body class="MyBody">
+    <nav class="MyNavbar">
+        <a class="MyNavbar-logo" href="http://localhost:8080/">COSMOS</a>
+        <ul class="MyNavbar-list">
+            <li id="real-nav"><a href="/products/real">REAL</a></li>
+            <li id="form-nav"><a href="/products/form">FORM</a></li>
+            <li id="register-nav"><a href="/sessions/register">REGISTER</a></li>
+            <li id="login-nav"><a href="/sessions/login">LOGIN</a></li>
+        </ul>
+        <button id="signout" class="MyNavbar-signout">SIGN OUT</button>
+    </nav>
+
+    {{{ body }}}
+
+    <footer class="MyFooter">
+        <h2 class="MyFooter-brand">COSMOS</h2>
+    </footer>
+</body>
+</html>
