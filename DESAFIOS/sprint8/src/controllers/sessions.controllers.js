@@ -1,9 +1,6 @@
 // import sessionsService from "../services/sessions.service.js"
 
 class SessionsController {
-    constructor(){
-        this.service = sessionsService
-    }
     register = async (req, res, next) => {
         try {
           return res.success201("Registered!")

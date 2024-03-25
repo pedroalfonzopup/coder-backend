@@ -1,8 +1,9 @@
-import "dotenv/config.js";
+import env from "./src/utils/env.util.js"
 import express from "express";
 import __dirname from "./utils.js";
 import dbConnection from "./src/utils/db.js";
 import socketUtils from "./src/utils/socket.util.js"
+import args from "./src/utils/args.util.js";
 
 import cors from "cors"
 import cookieParser from "cookie-parser";
@@ -20,7 +21,7 @@ import { Server } from "socket.io";
 import { engine } from "express-handlebars";
 
 const server = express();
-const PORT = 8080;
+const PORT = env.PORT || 8080;
 const ready = () => {
   console.log("Server ready on port " + PORT);
   dbConnection()
@@ -38,15 +39,15 @@ server.set("views", __dirname + "/src/views");
 
 // MIDDLEWARES
 const FileStore = sessionFileStore(expressSession)
-server.use(cookieParser(process.env.SECRET_KEY))
+server.use(cookieParser(env.SECRET_KEY))
 server.use(
   expressSession({
-    secret: process.env.SECRET_KEY,
+    secret: env.SECRET_KEY,
     resave: true,
     saveUninitialized: true,
     store: new MongoStore({
       ttl: 7 * 24 * 60 * 60,
-      mongoUrl: process.env.DB_LINK,
+      mongoUrl: env.DB_LINK,
     })
   })
 )

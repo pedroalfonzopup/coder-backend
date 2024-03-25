@@ -1,5 +1,5 @@
 import CustomRouter from "../CustomRouter.js";
-import { read, readByEmail, readOne, create, update, destroy } from "../../services/users.service.js"
+import { read, readByEmail, readOne, create, update, destroy } from "../../controllers/users.controller.js"
 
 export default class UsersRouter extends CustomRouter {
   init() {
