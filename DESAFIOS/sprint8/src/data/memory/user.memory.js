@@ -15,38 +15,44 @@ class UserManager {
       const data = JSON.stringify(users, null, "\t");
       await fs.promises.writeFile(this.file, data);
     } catch (error) {
-      return error.message;
+      throw error
     }
   }
-
-  async read() {
+  async validate() {
+      try {
+        const exists = await fs.promises.stat(this.file);
+      } catch (error) {
+        this.writeFile(UserManager.#users);
+        const data = this.read();
+        return data;
+      }
+    }
+  async read({filter, sortAndPaginate}) {
+    // A ESPERAR
     try {
       const data = await fs.promises.readFile(this.file);
       const users = JSON.parse(data);
       return users;
     } catch (error) {
-      return error.message;
+      throw error
     }
   }
 
-  async validate() {
-    try {
-      const exists = await fs.promises.stat(this.file);
-    } catch (error) {
-      this.writeFile(UserManager.#users);
-      const data = this.read();
-      return data;
-    }
-  }
+  
 
   async readOne(uid) {
-    await this.validate();
+    try {
+      await this.validate();
 
-    const users = await this.read();
+      const users = await this.read();
 
-    const user = users.find((user) => user.id === uid);
+      const user = users.find((user) => user.id === uid);
 
-    return user;
+      return user;
+    } catch (error) {
+      throw error
+    }
+    
   }
 
   async destroy(uid) {
@@ -58,12 +64,13 @@ class UserManager {
 
     try {
       users.splice(index, 1);
-    } catch (error) {
-      error.message;
-    }
-    this.writeFile(users);
+      this.writeFile(users);
 
-    return uid;
+      return userToDelete;
+    } catch (error) {
+      throw error
+    }
+    
   }
 
   async create(data) {
@@ -78,12 +85,14 @@ class UserManager {
       name: data.name,
       photo: data.photo,
       email: data.email,
+      password: data.password,
+      role: data.role,
     };
 
     users.push(user);
     this.writeFile(users);
 
-    return user.id;
+    return user;
   }
 
   async update(uid, data) {
@@ -95,11 +104,15 @@ class UserManager {
     try {
       toUpdate.splice(indexToUpdate, 1, { data });
     } catch (error) {
-      error.message;
+      throw error
     }
 
     this.writeFile(toUpdate);
 
-    return uid;
+    return toUpdate;
   }
 }
+
+const users = new UserManager("./src/data/fs/files/products.json")
+
+export default users

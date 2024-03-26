@@ -9,6 +9,15 @@ class UserManager {
   }
 
   static #users = [];
+  async validate() {
+      try {
+        const exists = await fs.promises.stat(this.file);
+      } catch (error) {
+        this.writeFile(UserManager.#users);
+        const data = this.read();
+        return data;
+      }
+    }
 
   async writeFile(users) {
     try {
@@ -19,7 +28,8 @@ class UserManager {
     }
   }
 
-  async read() {
+  async read({ filter, sortAndPaginate }) {
+    // A ESPERAR
     try {
       const data = await fs.promises.readFile(this.file);
       const users = JSON.parse(data);
@@ -29,24 +39,31 @@ class UserManager {
     }
   }
 
-  async validate() {
+  
+  async readOne(uid) {
     try {
-      const exists = await fs.promises.stat(this.file);
+      await this.validate();
+      const users = await this.read();
+      const user = users.find((user) => user.id === uid);
+      return user;
+
     } catch (error) {
-      this.writeFile(UserManager.#users);
-      const data = this.read();
-      return data;
+      throw error
     }
+    
   }
 
-  async readOne(uid) {
-    await this.validate();
+  async readOne(email) {
+    try {
+      await this.validate();
+      const users = await this.read();
+      const user = users.find((user) => user.email === email);
+      return user;
 
-    const users = await this.read();
-
-    const user = users.find((user) => user.id === uid);
-
-    return user;
+    } catch (error) {
+      throw error
+    }
+    
   }
 
   async destroy(uid) {
@@ -57,13 +74,13 @@ class UserManager {
     const index = users.indexOf(userToDelete);
 
     try {
-      users.splice(index, 1);
+      users.splice(index, 1); 
+      this.writeFile(users);
+      return userToDelete;
     } catch (error) {
-      error.message;
+      throw error
     }
-    this.writeFile(users);
-
-    return uid;
+   
   }
 
   async create(data) {
@@ -78,12 +95,14 @@ class UserManager {
       name: data.name,
       photo: data.photo,
       email: data.email,
+      password: data.password,
+      role: data.role,
     };
 
     // users.push(user)
     // this.writeFile(users)
 
-    return user.id;
+    return user;
   }
 
   async update(uid, data) {
@@ -94,57 +113,16 @@ class UserManager {
 
     try {
       toUpdate.splice(indexToUpdate, 1, { data });
+      this.writeFile(toUpdate);
+      return toUpdate;
     } catch (error) {
       error.message;
     }
 
-    this.writeFile(toUpdate);
-
-    return uid;
+    
   }
 }
 
 const users = new UserManager("./files/users.json");
-
-const user1 = {
-  name: "Igna Bacan",
-  email: "Bacanazo@gmail.com",
-  photo:
-    "https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png",
-};
-const user2 = {
-  name: "Juan Tuttolomondo",
-  email: "Tuttifrutti@gmail.com",
-  photo:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHPC4qINNo1QGBfT-BqIA8DSgwF7YiAZC275zkiXLht9Te-OOtCfBo2bbyYxXxDfl0v2E&usqp=CAU",
-};
-const user3 = {
-  name: "Elias Zekha",
-  email: "Kemno@gmail.com",
-  photo:
-    "https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png",
-};
-const user4 = {
-  name: "Laura Olaya",
-  email: "Dica@gmail.com",
-  photo:
-    "https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png",
-};
-const user5 = {
-  name: "Brenda Alvarez",
-  email: "Roling@gmail.com",
-  photo:
-    "https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png",
-};
-
-const testsUsers = async () => {
-  await users.create(user1);
-  await users.create(user2);
-  await users.create(user3);
-  await users.create(user4);
-  await users.create(user5);
-};
-
-testsUsers();
 
 export default users;

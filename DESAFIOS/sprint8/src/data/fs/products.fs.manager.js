@@ -20,6 +20,8 @@ class ProductManager {
     this.products = [];
     this.init();
   }
+
+
   async create(data) {
 
     console.log(data)
@@ -39,12 +41,13 @@ class ProductManager {
 
       //productsArray.push(product)
       //await fs.promises.writeFile("./src/data/fs/files/products.json", productsArray)
-      return product.id;
+      return product;
     } catch (error) {
       throw error;
     }
   }
-  read() {
+  read({ filter, sortAndPaginate }) {
+    // A ESPERAR
     try {
       if (this.products.length === 0) {
         const error = new Error("There are not products");
@@ -72,28 +75,6 @@ class ProductManager {
       throw error;
     }
   }
-
-  async soldProduct(quantity, pid) {
-    try {
-      const one = this.readOne(pid);
-      if (one.stock >= quantity) {
-        one.stock = one.stock - quantity;
-        ProductManager.#totalGain =
-          ProductManager.#totalGain +
-          one.price * quantity * ProductManager.#perGain;
-        const soldData = JSON.stringify(this.products, null, 2);
-        await fs.promises.writeFile(this.path, soldData);
-        return one.stock;
-      } else {
-        const error = new Error("there is no more stock");
-        error.statusCode = 400;
-        throw error;
-      }
-    } catch (error) {
-      throw error;
-    }
-  }
-
   async destroy(id) {
     try {
       this.readOne(id);
@@ -115,7 +96,7 @@ class ProductManager {
       toUpdate.splice(indexToUpdate, 1, { data });
       await fs.promises.writeFile(this.path, toUpdate);
 
-      return pid;
+      return toUpdate;
     } catch (error) {
       error.message;
     }
@@ -123,15 +104,5 @@ class ProductManager {
 }
 
 const products = new ProductManager("./src/data/fs/files/products.json");
-
-// console.log(
-//   await products.create({
-//     title: "Calculadora",
-//     price: 200,
-//     photo:
-//       "https://http2.mlstatic.com/D_NQ_NP_2X_978839-MLA43556248580_092020-F.webp",
-//     stock: 25,
-//   })
-// );
 
 export default products;

@@ -11,7 +11,15 @@ class OrderManager {
   }
 
   static #cart = [];
-
+  async validate() {
+      try {
+        const exists = await fs.promises.stat(this.file);
+      } catch (error) {
+        this.writeFile(OrderManager.#cart);
+        const data = this.read();
+        return data;
+      }
+    }
   async writeFile(orders) {
     try {
       const data = JSON.stringify(orders, null, "\t");
@@ -21,71 +29,42 @@ class OrderManager {
     }
   }
 
-  async read() {
+  async read({ filter, sortAndPaginate }) {
+    // A ESPERAR
     try {
       const data = await fs.promises.readFile(this.file);
       const orders = JSON.parse(data);
       return orders;
     } catch (error) {
-      return error.message;
+      throw error
     }
   }
-
-  async validate() {
+  async readOne(oid){
     try {
-      const exists = await fs.promises.stat(this.file);
+      const orders = await this.read()
+      const one = orders.find((order) => order.id === oid)
+      return one
     } catch (error) {
-      this.writeFile(OrderManager.#cart);
-      const data = this.read();
-      return data;
+      throw error
     }
   }
-
-  async readByUser(uid) {
-    await this.validate();
-
-    const orders = await this.read();
-
-    const order = orders.find((order) => order.id === uid);
-
-    return order;
-  }
-
   async destroy(oid) {
     await this.validate();
 
     const orders = await this.read();
-    const orderToDelete = orders.find((order) => order.id === oid);
-    const index = orders.indexOf(orderToDelete);
+    const one = orders.find((order) => order.id === oid);
+    const index = orders.indexOf(one);
 
     try {
+      
       orders.splice(index, 1);
+      this.writeFile(orders);
+      return one;
     } catch (error) {
-      error.message;
-    }
-
-    this.writeFile(orders);
-
-    return oid;
-  }
-
-  async validateUser(uid) {
-    try {
-      const user = await users.readOne(uid);
-      return true;
-    } catch (error) {
-      error.message;
+      throw error
     }
   }
 
-  async validateProduct(pdi) {
-    try {
-      const product = await products.readOne(pdi);
-      return true;
-    } catch (error) {
-      error.message;
-    }
-  }
 
   async create(data) {
     await this.validate();
@@ -93,8 +72,6 @@ class OrderManager {
     const newId = crypto.randomBytes(12).toString("hex");
 
     try {
-      this.validateUser(data.uid);
-      this.validateProduct(data.pid);
       products.soldProduct(data.pdi, data.quantity);
 
       const order = {
@@ -110,25 +87,23 @@ class OrderManager {
 
       return order.id;
     } catch (error) {
-      error.message;
+      throw error
     }
   }
 
-  async update(oid, quantity, state) {
+  async update(oid, data) {
     const orders = await this.read();
     const toUpdate = JSON.parse(orders);
 
     const indexToUpdate = toUpdate.findIndex((object) => object.id === oid);
 
     try {
-      toUpdate.splice(indexToUpdate, 1, { quantity: quantity, state: state });
+      toUpdate.splice(indexToUpdate, 1, { data });
+      this.writeFile(toUpdate);
+      return toUpdate;  
     } catch (error) {
-      error.message;
+      throw error
     }
-
-    this.writeFile(toUpdate);
-
-    return oid;
   }
 }
 
