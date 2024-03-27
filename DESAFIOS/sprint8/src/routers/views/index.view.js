@@ -1,7 +1,8 @@
 import CustomRouter from "../CustomRouter.js";
 import passCallBack from "../../middlewares/passCallBack.mid.js"
 
-import { products } from "../../data/mongo/manager.mongo.js";
+import dao from "../../data/index.factory.js"
+const { products } = dao
 
 import OrdersRouter from "./orders.view.js";
 import SessionsRouter from "./sessions.view.js";

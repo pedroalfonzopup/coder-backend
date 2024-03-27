@@ -42,7 +42,7 @@ class OrderManager {
   async readOne(oid){
     try {
       const orders = await this.read()
-      const one = orders.find((order) => order.id === oid)
+      const one = orders.find((order) => order._id === oid)
       return one
     } catch (error) {
       throw error
@@ -52,7 +52,7 @@ class OrderManager {
     await this.validate();
 
     const orders = await this.read();
-    const one = orders.find((order) => order.id === oid);
+    const one = orders.find((order) => order._id === oid);
     const index = orders.indexOf(one);
 
     try {
@@ -69,21 +69,12 @@ class OrderManager {
   async create(data) {
     await this.validate();
     const orders = await this.read();
-    const newId = crypto.randomBytes(12).toString("hex");
 
     try {
-      const order = {
-        id: newId,
-        product_id: data.product_id,
-        user_id: data.user_id,
-        quantity: data.quantity,
-        state: data.state || "reserved",
-      };
-
-      orders.push(order)
+      orders.push(data)
       this.writeFile(orders)
 
-      return order.id;
+      return data;
     } catch (error) {
       throw error
     }
@@ -93,7 +84,7 @@ class OrderManager {
     const orders = await this.read();
     const toUpdate = JSON.parse(orders);
 
-    const indexToUpdate = toUpdate.findIndex((object) => object.id === oid);
+    const indexToUpdate = toUpdate.findIndex((object) => object._id === oid);
 
     try {
       toUpdate.splice(indexToUpdate, 1, { data });

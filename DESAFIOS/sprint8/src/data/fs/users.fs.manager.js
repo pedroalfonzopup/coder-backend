@@ -44,7 +44,7 @@ class UserManager {
     try {
       await this.validate();
       const users = await this.read();
-      const user = users.find((user) => user.id === uid);
+      const user = users.find((user) => user._id === uid);
       return user;
 
     } catch (error) {
@@ -70,7 +70,7 @@ class UserManager {
     await this.validate();
 
     const users = await this.read();
-    const userToDelete = users.find((user) => user.id === uid);
+    const userToDelete = users.find((user) => user._id === uid);
     const index = users.indexOf(userToDelete);
 
     try {
@@ -84,32 +84,23 @@ class UserManager {
   }
 
   async create(data) {
-    await this.validate();
+    try {
+      await this.validate();
+      const users = await this.read();
+      users.push(data)
+      this.writeFile(users)
+      return data;
+    } catch (error) {
+      throw error
+    }
 
-    const users = await this.read();
-
-    const newId = crypto.randomBytes(12).toString("hex");
-
-    const user = {
-      id: newId,
-      name: data.name,
-      photo: data.photo || "ttps://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png",
-      email: data.email,
-      password: data.password,
-      role: data.role,
-    };
-
-    // users.push(user)
-    // this.writeFile(users)
-
-    return user;
   }
 
   async update(uid, data) {
     const users = await this.read();
     const toUpdate = JSON.parse(users);
 
-    const indexToUpdate = toUpdate.findIndex((object) => object.id === uid);
+    const indexToUpdate = toUpdate.findIndex((object) => object._id === uid);
 
     try {
       toUpdate.splice(indexToUpdate, 1, { data });

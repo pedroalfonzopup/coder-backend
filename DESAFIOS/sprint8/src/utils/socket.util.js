@@ -1,5 +1,5 @@
-import products from "../data/fs/products.fs.manager.js";
-import { users } from "../data/mongo/manager.mongo.js";
+import dao from "../data/index.factory.js"
+const { users, products } = dao
 
 export default (socket) => {
     console.log("client " + socket.id + " connected");

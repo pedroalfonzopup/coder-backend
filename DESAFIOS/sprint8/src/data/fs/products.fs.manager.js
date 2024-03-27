@@ -27,21 +27,11 @@ class ProductManager {
     console.log(data)
     const productsFromJson = await fs.promises.readFile("./src/data/fs/files/products.json")
     const productsArray = JSON.parse(productsFromJson)
-    console.log("ARRAY A PUSHEAR" +productsArray)
     try {
-      const newId = crypto.randomBytes(12).toString("hex")
-      const product = {
-        id: newId,
-        title: data.title,
-        photo: data.photo || "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
-        price: data.price,
-        stock: data.stock,
-      };
-      console.log("PRODUCTO A GUARDAR" +product)
-
-      //productsArray.push(product)
-      //await fs.promises.writeFile("./src/data/fs/files/products.json", productsArray)
-      return product;
+      
+      productsArray.push(data)
+      await fs.promises.writeFile("./src/data/fs/files/products.json", productsArray)
+      return data;
     } catch (error) {
       throw error;
     }
@@ -63,7 +53,7 @@ class ProductManager {
 
   readOne(id) {
     try {
-      const one = this.products.find((each) => each.id === id);
+      const one = this.products.find((each) => each._id === id);
       if (!one) {
         const error = new Error("Product by ID:" + id + " not found");
         error.statusCode = 404;
@@ -78,7 +68,7 @@ class ProductManager {
   async destroy(id) {
     try {
       this.readOne(id);
-      this.products = this.products.filter((each) => each.id !== id);
+      this.products = this.products.filter((each) => each._id !== id);
       const jsonData = JSON.stringify(this.products, null, 2);
       await fs.promises.writeFile(this.path, jsonData);
       return id;
@@ -92,7 +82,7 @@ class ProductManager {
     try {
       const products = this.read();
       const toUpdate = JSON.parse(products);
-      const indexToUpdate = toUpdate.findIndex((object) => object.id === pid);
+      const indexToUpdate = toUpdate.findIndex((object) => object._id === pid);
       toUpdate.splice(indexToUpdate, 1, { data });
       await fs.promises.writeFile(this.path, toUpdate);
 

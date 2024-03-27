@@ -1,12 +1,12 @@
-import { users } from "../data/mongo/manager.mongo.js"
+import repository from "../repositories/users.rep.js"
 
 class UsersService {
     constructor(){
-        this.model = users
+        this.repository = repository
     }
     read = async ({ filter, sortAndPaginate }) => {
         try {
-            const response = await this.model.read({ filter, sortAndPaginate })
+            const response = await this.repository.read({ filter, sortAndPaginate })
             return response
         } catch (error) {
             throw error
@@ -14,7 +14,7 @@ class UsersService {
     }
     readByEmail = async (email) => {
         try {
-            const response = await this.model.readByEmail(email)
+            const response = await this.repository.readByEmail(email)
             return response
         } catch (error) {
             throw error
@@ -22,7 +22,7 @@ class UsersService {
     }
     readOne = async (uid) => {
         try {
-            const response = await this.model.readOne(uid)
+            const response = await this.repository.readOne(uid)
             return response
         } catch (error) {
             throw error
@@ -30,7 +30,7 @@ class UsersService {
     }
     create = async (data) => {
         try {
-            const response = await this.model.create(data)
+            const response = await this.repository.create(data)
             return response
         } catch (error) {
             throw error
@@ -38,7 +38,7 @@ class UsersService {
     }
     update = async (uid, data) => {
         try {
-            const response = await this.model.update(uid, data)
+            const response = await this.repository.update(uid, data)
             return response
         } catch (error) {
             throw error
@@ -46,7 +46,7 @@ class UsersService {
     }
     destroy = async (uid) => {
         try {
-            const response = await this.model.destroy(uid)
+            const response = await this.repository.destroy(uid)
             return response
         } catch (error) {
             throw error

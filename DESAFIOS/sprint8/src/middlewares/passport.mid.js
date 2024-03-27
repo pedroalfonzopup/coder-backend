@@ -1,7 +1,8 @@
 import passport from "passport";
 import { createHash, verifyHash } from "../utils/hash.util.js";
 import { createToken } from "../utils/token.util.js";
-import { users } from "../data/mongo/manager.mongo.js";
+import dao from "../data/index.factory.js"
+const { users } = dao
 import { Strategy as LocalStrategy } from "passport-local";
 import { Strategy as GoogleStrategy } from "passport-google-oauth2";
 import { ExtractJwt, Strategy as JwtStrategy } from "passport-jwt";

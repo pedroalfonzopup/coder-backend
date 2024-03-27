@@ -46,7 +46,7 @@ class OrderManager {
     try {
       await this.validate();
       const orders = await this.read();
-      const order = orders.find((order) => order.id === oid);
+      const order = orders.find((order) => order._id === oid);
       return order;
     } catch (error) {
       throw error
@@ -57,7 +57,7 @@ class OrderManager {
     await this.validate();
 
     const orders = await this.read();
-    const orderToDelete = orders.find((order) => order.id === oid);
+    const orderToDelete = orders.find((order) => order._id === oid);
     const index = orders.indexOf(orderToDelete);
 
     try {
@@ -68,30 +68,18 @@ class OrderManager {
     } catch (error) {
       throw error
     }
-
-
   }
 
 
   async create(data) {
     await this.validate();
     const orders = await this.read();
-    const newId = crypto.randomBytes(12).toString("hex");
 
     try {
-
-      const order = {
-        id: newId,
-        product_id: data.product_id,
-        user_id: data.user_id,
-        quantity: data.quantity,
-        state: data.state || "reserved",
-      };
-
-      orders.push(order);
+      orders.push(data);
       this.writeFile(orders);
 
-      return order;
+      return data;
     } catch (error) {
       throw error
     }
@@ -101,7 +89,7 @@ class OrderManager {
     const orders = await this.read();
     const toUpdate = JSON.parse(orders);
 
-    const indexToUpdate = toUpdate.findIndex((object) => object.id === oid);
+    const indexToUpdate = toUpdate.findIndex((object) => object._id === oid);
 
     try {
       toUpdate.splice(indexToUpdate, 1, { data });
