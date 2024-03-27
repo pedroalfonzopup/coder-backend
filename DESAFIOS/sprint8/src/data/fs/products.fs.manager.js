@@ -33,7 +33,7 @@ class ProductManager {
       const product = {
         id: newId,
         title: data.title,
-        photo: data.photo,
+        photo: data.photo || "https://png.pngtree.com/thumb_back/fw800/background/20220309/pngtree-cartoon-box-warehouse-packing-cargo-photo-image_5161976.jpg",
         price: data.price,
         stock: data.stock,
       };

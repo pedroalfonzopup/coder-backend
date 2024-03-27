@@ -83,7 +83,7 @@ class UserManager {
     const user = {
       id: newId,
       name: data.name,
-      photo: data.photo,
+      photo: data.photo || "ttps://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png",
       email: data.email,
       password: data.password,
       role: data.role,
@@ -113,6 +113,6 @@ class UserManager {
   }
 }
 
-const users = new UserManager("./src/data/fs/files/products.json")
+const users = new UserManager()
 
 export default users

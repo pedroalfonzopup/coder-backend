@@ -82,10 +82,10 @@ class OrderManager {
 
       const order = {
         id: newId,
-        pid: data.pid,
-        uid: data.uid,
+        product_id: data.product_id,
+        user_id: data.user_id,
         quantity: data.quantity,
-        state: data.state || "In Observation",
+        state: data.state || "reserved",
       };
 
       orders.push(order);
@@ -113,6 +113,6 @@ class OrderManager {
   }
 }
 
-const orders = new OrderManager("./src/data/fs/files/products.json")
+const orders = new OrderManager()
 
 export default orders

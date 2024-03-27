@@ -72,14 +72,12 @@ class OrderManager {
     const newId = crypto.randomBytes(12).toString("hex");
 
     try {
-      products.soldProduct(data.pdi, data.quantity);
-
       const order = {
         id: newId,
-        pid: data.pid,
-        uid: data.uid,
+        product_id: data.product_id,
+        user_id: data.user_id,
         quantity: data.quantity,
-        state: data.state || "In Observation",
+        state: data.state || "reserved",
       };
 
       orders.push(order)

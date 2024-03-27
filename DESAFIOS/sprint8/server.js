@@ -24,7 +24,9 @@ const server = express();
 const PORT = env.PORT || 8080;
 const ready = () => {
   console.log("Server ready on port " + PORT);
+  //MIRAR
   dbConnection()
+  console.log("mode "+ args.env)
 }
 const httpServer = createServer(server);
 const socketServer = new Server(httpServer);

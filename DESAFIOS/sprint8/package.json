@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "nodemon ./server.js --env test",
-    "start": "node ./server.js",
+    "start": "nodemon ./server.js",
     "dev": "nodemon ./server.js --env dev"
   },
   "keywords": [],

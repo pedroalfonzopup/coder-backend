@@ -1,12 +1,12 @@
-import { products } from "../data/mongo/manager.mongo.js"
+import repository from "../repositories/products.rep.js"
 
 class ProductsService {
     constructor() {
-        this.model = products
+        this.repository = repository
     }
     create = async (data) => {
         try {
-            const response = await this.model.create(data)
+            const response = await this.repository.create(data)
             return response
         } catch (error) {
             throw error
@@ -14,7 +14,7 @@ class ProductsService {
     }
     read = async ({ filter, sortAndPaginate }) => {
         try {
-            const response = await this.model.read({ filter, sortAndPaginate })
+            const response = await this.repository.read({ filter, sortAndPaginate })
             return response
         } catch (error) {
             throw error
@@ -22,7 +22,7 @@ class ProductsService {
     }
     readOne = async (pid) => {
         try {
-            const response = await this.model.readOne(pid)
+            const response = await this.repository.readOne(pid)
             return response
         } catch (error) {
             throw error
@@ -30,7 +30,7 @@ class ProductsService {
     }
     update = async (pid, data) => {
         try {
-            const response = await this.model.update(pid, data)
+            const response = await this.repository.update(pid, data)
             return response
         } catch (error) {
             throw error
@@ -38,7 +38,7 @@ class ProductsService {
     }
     destroy = async (pid) => {
         try {
-            const response = await this.model.destroy(pid)
+            const response = await this.repository.destroy(pid)
             return response
         } catch (error) {
             throw error
