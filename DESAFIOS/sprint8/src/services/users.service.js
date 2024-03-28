@@ -1,4 +1,5 @@
 import repository from "../repositories/users.rep.js"
+import sendEmail from "../utils/sendEmail.util.js"
 
 class UsersService {
     constructor(){
@@ -48,6 +49,14 @@ class UsersService {
         try {
             const response = await this.repository.destroy(uid)
             return response
+        } catch (error) {
+            throw error
+        }
+    }
+    // CLASE 30
+    register = async(data) => {
+        try {
+            await sendEmail(data)
         } catch (error) {
             throw error
         }

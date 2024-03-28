@@ -1,8 +1,14 @@
 // import sessionsService from "../services/sessions.service.js"
+import usersService from "../services/users.service.js";
 
 class SessionsController {
+    constructor(){
+      this.service = usersService
+    }
     register = async (req, res, next) => {
-        try {
+      const { email, name } = req.body
+      await this.service.register({ email, name})
+      try {
           return res.success201("Registered!")
         } catch (error) {
           return next(error);
