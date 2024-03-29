@@ -6,8 +6,8 @@ const { users } = dao
 import { Strategy as LocalStrategy } from "passport-local";
 import { Strategy as GoogleStrategy } from "passport-google-oauth2";
 import { ExtractJwt, Strategy as JwtStrategy } from "passport-jwt";
-const { GOOGLE_ID, GOOGLE_CLIENT, SECRET_KEY } =
-  process.env;
+const { GOOGLE_ID, GOOGLE_CLIENT, SECRET_KEY } = process.env;
+
 passport.use(
   "register",
   new LocalStrategy(
@@ -39,7 +39,8 @@ passport.use(
     async (req, email, password, done) => {
       try {
         const user = await users.readByEmail(email);
-        if (user && verifyHash(password, user.password)) {
+        const verify = verifyHash(password, user.password)
+        if (user?.verified && verify) {
           const token = createToken({ email, role: user.role });
           req.token = token;
           return done(null, user);

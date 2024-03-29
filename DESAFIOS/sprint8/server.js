@@ -1,7 +1,7 @@
 import env from "./src/utils/env.util.js"
 import express from "express";
 import __dirname from "./utils.js";
-import dbConnection from "./src/utils/db.js";
+// import dbConnection from "./src/utils/db.js";
 import socketUtils from "./src/utils/socket.util.js"
 import args from "./src/utils/args.util.js";
 
@@ -24,8 +24,6 @@ const server = express();
 const PORT = env.PORT || 8080;
 const ready = () => {
   console.log("Server ready on port " + PORT);
-  //MIRAR
-  dbConnection()
   console.log("mode "+ args.env)
 }
 const httpServer = createServer(server);

@@ -2,7 +2,7 @@ import CustomRouter from "../CustomRouter.js"
 import has8char from "../../middlewares/has8char.mid.js"
 import passport from "../../middlewares/passport.mid.js"
 import passCallBack from "../../middlewares/passCallBack.mid.js"
-import { register, login, loginJwt, googleCallback, signout, signoutCallback, badauht } from "../../controllers/sessions.controllers.js"
+import { register, login, loginJwt, googleCallback, signout, signoutCallback, badauht, verifyAccount } from "../../controllers/sessions.controllers.js"
 
 export default class SessionRouter extends CustomRouter {
   init() {
@@ -23,6 +23,9 @@ export default class SessionRouter extends CustomRouter {
 
     //BADAUTH
     this.read("/badauth", ["PUBLIC"], badauht);
+    
+    //VERIFY
+    this.create("/verify", ["PUBLIC"], verifyAccount)
   }
 }
 
