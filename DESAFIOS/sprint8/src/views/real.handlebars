@@ -1,11 +1,9 @@
 <main class="Real">
     <h1 class="Real-welcome">REAL TIME VISUALIZER</h1>
     <h3 class="Real-paragraph">See our products in real time!</h3>
-    {{!-- <div 
-        class="Real-products"
-        id="RealProducts"
-    ></div> --}}
-    <section>
+    
+
+    <section class="Real-products">
         {{#each products}}
             <div class="Product">
                 <div class="Product-container">
@@ -16,8 +14,20 @@
             </div>
         {{/each}}   
     </section>
+    <span class="Paginate-container">
+            {{#if prev}}
+                <a
+                class="Paginate-prev"
+                href="/?title={{filter}}&page={{prev}}"
+                >PREV</a>
+            {{/if}}
+            {{#if next}}
+                <a
+                class="Paginate-next"
+                href="/?title={{filter}}&page={{next}}"
+                >NEXT</a>
+            {{/if}}
+      </span> 
     
-
 </main>
-{{!-- <script src="/socket.io/socket.io.js"></script> --}}
 <script src="/real.js"></script>

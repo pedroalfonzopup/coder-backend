@@ -7,7 +7,10 @@ const { products } = dao
 import OrdersRouter from "./orders.view.js";
 import SessionsRouter from "./sessions.view.js";
 import ProductsRouter from "./products.view.js";
+import VerifyRouter from "./verify.view.js";
 
+const verify = new VerifyRouter()
+const verifyRouter = verify.getRouter()
 const orders = new OrdersRouter()
 const ordersRouter = orders.getRouter()
 const sessions = new SessionsRouter()
@@ -17,13 +20,14 @@ const productsRouter = productsR.getRouter()
 
 export default class ViewsRouter extends CustomRouter {
   init() {
+    this.router.use("/verify", verifyRouter)
     this.router.use("/orders", passCallBack("jwt"), ordersRouter)
     this.router.use("/sessions", sessionsRouter);
     this.router.use("/products", productsRouter);
     this.read("/", ["PUBLIC"], async (req, res, next) => {
       try {
         const sortAndPaginate = {
-          limit: req.query.limit || 6,
+          limit: req.query.limit || 5,
           page: req.query.page || 1,
           sort: { title: 1 },
           lean: true,

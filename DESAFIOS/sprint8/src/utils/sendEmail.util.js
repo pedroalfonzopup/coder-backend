@@ -11,7 +11,11 @@ async function sendEmail(data) {
             from: `COSMOS <${env.GOOGLE_APP_EMAIL}>`,
             to: data.email,
             subject: `USER ${data.name.toUppercase()} REGISTERED!`,
-            html: "<h1>USER REGISTERED!</h1>",
+            html: `
+            <h1>USER REGISTERED!<h1>
+            <p>PLEASE VERIFY TO GAIN ACCESS TO THE WHOLE WEB</p>
+            <p>VERIFY CODE: ${data.verifiedCode}</p>
+            `,
         })
     } catch (error) {
         throw error

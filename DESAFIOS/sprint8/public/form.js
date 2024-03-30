@@ -1,6 +1,5 @@
-console.log("socket");
-
-const socket = io();
+import dao from "../src/data/index.factory";
+const { products } = dao
 
 document.querySelector("#newProduct").addEventListener("click", (event) => {
   event.preventDefault();
@@ -16,5 +15,6 @@ document.querySelector("#newProduct").addEventListener("click", (event) => {
   price && (data.price = price);
   stock && (data.stock = stock);
 
-  socket.emit("newProduct", data);
+  products.create(data)
+  alert("Product Created!!!")
 });

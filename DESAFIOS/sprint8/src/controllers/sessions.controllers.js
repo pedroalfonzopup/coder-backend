@@ -6,8 +6,8 @@ class SessionsController {
     this.service = usersService
   }
   register = async (req, res, next) => {
-    const { email, name } = req.body
-    await this.service.register({ email, name })
+    const { email, name, verifiedCode } = req.body
+    await this.service.register({ email, name, verifiedCode })
     try {
       return res.success201("Registered!")
     } catch (error) {

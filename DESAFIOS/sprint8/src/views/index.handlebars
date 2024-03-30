@@ -32,7 +32,8 @@
                 <h5 class="Product-price"> ${{this.price}} </h5>
             </div>
         {{/each}}
-        <span class="Paginate-container">
+    </div>
+    <span class="Paginate-container">
             {{#if prev}}
                 <a
                 class="Paginate-prev"
@@ -45,6 +46,5 @@
                 href="/?title={{filter}}&page={{next}}"
                 >NEXT</a>
             {{/if}}
-        </span> 
-    </div>
+      </span> 
 </main>

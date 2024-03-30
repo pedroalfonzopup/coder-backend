@@ -7,7 +7,7 @@ export default class ProductsRouter extends CustomRouter {
     this.read("/real", ["PUBLIC"], async (req, res, nect) => {
       try {
         const sortAndPaginate = {
-          limit: req.query.limit || 10,
+          limit: req.query.limit || 5,
           page: req.query.page || 1,
           sort: { title: 1 },
           lean: true
