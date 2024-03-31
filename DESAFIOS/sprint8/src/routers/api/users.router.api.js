@@ -6,7 +6,7 @@ export default class UsersRouter extends CustomRouter {
     this.read("/", ["ADMIN"], read)
     this.read("/email/:email", ["ADMIN"], readByEmail)
     this.read("/:uid", ["ADMIN"], readOne)
-    this.create("/", ["ADMIN"], create)
+    this.create("/", ["PUBLIC"], create)
     this.update("/:uid", ["ADMIN"], update)
     this.destroy("/:uid", ["ADMIN"], destroy)
   }

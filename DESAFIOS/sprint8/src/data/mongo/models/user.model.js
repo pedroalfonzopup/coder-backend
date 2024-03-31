@@ -14,7 +14,7 @@ const schema = new Schema(
         age: { type: Number },
         role: { type: Number, required: true },
         verified: { type: Boolean, default: false },
-        verifiedCode: { type: String, required: true }
+        verifiedCode: { type: String }
     }, { timestamps: true }
 )
 
