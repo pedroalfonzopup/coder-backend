@@ -5,7 +5,11 @@
         <form class="Verify-form">
             <fieldset class="Verify-form_box">
                 <label for="code">Insert Code</label>
-                <input id="verify-code" class="Verify-form_box_input" type="text">
+                <input id="verify-code" required="true" class="Verify-form_box_input" type="text">
+            </fieldset>
+            <fieldset class="Verify-form_box">
+                <label for="email">Insert Email</label>
+                <input id="verify-email" required="true" class="Verify-form_box_input" type="text">
             </fieldset>
             <button
                 id="verify"
@@ -19,5 +23,5 @@
             class="Verify-container_img">
         </div>
     </section>
-    
 </main>
+<script src="/public/scripts/verify.js"></script>
