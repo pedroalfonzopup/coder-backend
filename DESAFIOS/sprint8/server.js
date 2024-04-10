@@ -4,6 +4,9 @@ import __dirname from "./utils.js";
 // import dbConnection from "./src/utils/db.js";
 import socketUtils from "./src/utils/socket.util.js"
 import args from "./src/utils/args.util.js";
+import compression from "express-compression"
+// import createUsers from "./src/data/mocks/users.mock.js";
+// import createProducts from "./src/data/mocks/products.mock.js";
 
 import cors from "cors"
 import cookieParser from "cookie-parser";
@@ -61,11 +64,23 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 server.use(express.static(__dirname + "/public"));
 server.use(morgan("dev"));
+server.use(compression({
+    brotli: { enabled:true, zlib:{} }
+  }))
 
 // ENDPOINTS
 const router = new IndexRouter()
 server.use("/", router.getRouter());
 server.use(errorHandler);
 server.use(pathHandler);
+
+// ASI CREE AMBOS PRODUCTOS Y USUARIOS
+// No se si hacia falta hacerlo aqui, pero me aseguraba no meter
+// Por error los mocks en prod
+// for (let i = 1; i <= 100; i++) {
+//   createUsers()
+//   createProducts()
+// }
+
 
 export { socketServer };
