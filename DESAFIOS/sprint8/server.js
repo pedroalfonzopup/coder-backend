@@ -22,12 +22,13 @@ import pathHandler from "./src/middlewares/pathHandler.mid.js";
 import { createServer } from "http";
 import { Server } from "socket.io";
 import { engine } from "express-handlebars";
+import winston from "./src/utils/winston.util.js";
 
 const server = express();
 const PORT = env.PORT || 8080;
 const ready = () => {
-  console.log("Server ready on port " + PORT);
-  console.log("mode "+ args.env)
+  winston.INFO("Server ready on port " + PORT);
+  winston.INFO("mode "+ args.env)
 }
 const httpServer = createServer(server);
 const socketServer = new Server(httpServer);

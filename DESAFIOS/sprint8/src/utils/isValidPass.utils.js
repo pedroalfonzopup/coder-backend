@@ -5,6 +5,8 @@ function isValidPass(formPassword, dbPassword) {
       throw error;
     }
   }
+
+  // NO SE UTILIZA 
   
   export default isValidPass;
   

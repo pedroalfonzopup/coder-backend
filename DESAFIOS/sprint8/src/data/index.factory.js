@@ -1,5 +1,6 @@
 import args from "../utils/args.util.js"
 import dbConnection from "../utils/db.js"
+import winston from "../utils/winston.util.js"
 
 const environment = args.env
 
@@ -7,14 +8,14 @@ let dao = {}
 
 switch (environment) {
     case "test":
-        console.log("FS CONNECTED")
+        winston.INFO("FS CONNECTED")
         const { default: productsFs } = await import("./fs/products.fs.manager.js")
         const { default: usersFs } = await import("./fs/users.fs.manager.js")
         const { default: ordersFs } = await import("./fs/orders.fs.manager.js")
         dao = { products: productsFs, users: usersFs, orders: ordersFs }
         break;
     default:
-        console.log("MONGO CONNECTED")
+        winston.INFO("MONGO CONNECTED")
         dbConnection()
         
         const { default: productsMongo } = await import("./mongo/products.mongo.js")

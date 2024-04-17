@@ -1,3 +1,5 @@
+import winston from "../../src/utils/winston.util";
+
 const selector = document.querySelector("#register");
 selector.addEventListener("click", async () => {
   try {
@@ -13,7 +15,7 @@ selector.addEventListener("click", async () => {
     };
     let response = await fetch("/api/sessions/register", opts);
     response = await response.json();
-    console.log(response);
+    winston.HTTP(response);
     response.statusCode === 201
       ? location.replace("/sessions/login")
       : alert("ERROR: " + response.message);

@@ -7,6 +7,7 @@ import { Strategy as LocalStrategy } from "passport-local";
 import { Strategy as GoogleStrategy } from "passport-google-oauth2";
 import { ExtractJwt, Strategy as JwtStrategy } from "passport-jwt";
 const { GOOGLE_ID, GOOGLE_CLIENT, SECRET_KEY } = process.env;
+import errors from "../utils/errors/errors.utils.js";
 
 passport.use(
   "register",
@@ -21,10 +22,7 @@ passport.use(
           let user = await users.create(data);
           return done(null, user);
         } else {
-          return done(null, false, {
-            message: "User already exists",
-            statusCode: 400,
-          });
+          return done(null, false, errors.userExist);
         }
       } catch (error) {
         return done(error);
@@ -45,7 +43,7 @@ passport.use(
           req.token = token;
           return done(null, user);
         } else {
-          return done(null, false, { message: "Bad auth!!!" });
+          return done(null, false, errors.auth);
         }
       } catch (error) {
         return done(error);

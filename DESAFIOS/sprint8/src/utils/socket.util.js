@@ -1,8 +1,9 @@
 import dao from "../data/index.factory.js"
+import winston from "./winston.util.js";
 const { users, products } = dao
 
 export default (socket) => {
-    console.log("client " + socket.id + " connected");
+    winston.HTTP("client " + socket.id + " connected");
   
     //EMITS y ONS
     socket.emit("products", products.read());
@@ -11,14 +12,14 @@ export default (socket) => {
         await products.create(data);
         socketServer.emit("products", products.read());
       } catch (error) {
-        console.log(error);
+        winston.ERROR(error);
       }
     });
     socket.on("registerUser", async (data) => {
       try {
         await users.create(data)
       } catch (error) {
-        console.log(error)
+        winston.ERROR(error)
       }
     })
     socket.on("loginUser", async (data) => {
@@ -33,7 +34,7 @@ export default (socket) => {
         socketServer.emit("loginFailed", "User does not exist!")
       } 
       } catch (error) {
-        console.log(error)
+        winston.ERROR(error)
       }
     })
   }

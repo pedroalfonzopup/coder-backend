@@ -19,7 +19,7 @@ fetch("/api/sessions/", { method: "POST" })
             location.replace("/");
           }
         } catch (error) {
-          console.log(error);
+          throw error
         }
       });
     } else {

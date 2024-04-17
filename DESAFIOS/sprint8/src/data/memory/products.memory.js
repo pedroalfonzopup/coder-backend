@@ -22,9 +22,9 @@ class ProductManager {
   }
   async create(data) {
     const productsFromJson = await fs.promises.readFile("./src/data/fs/files/products.json")
-    console.log("READFILE memory" +productsFromJson)
+    
     const productsArray = JSON.parse(productsFromJson)
-    console.log("ARRAY A PUSHEAR memory" +productsArray)
+    
     try {
       productsArray.push(data)
       await fs.promises.writeFile("./src/data/fs/files/products.json", productsArray)

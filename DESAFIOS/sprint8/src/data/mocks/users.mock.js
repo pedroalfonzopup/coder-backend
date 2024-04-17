@@ -17,6 +17,6 @@ export default async function createUsers() {
         const data = usersMock()
         await repository.create(data)
     } catch (error) {
-        console.log(error)
+        throw error
     }   
 }

@@ -1,5 +1,7 @@
 // import sessionsService from "../services/sessions.service.js"
 import usersService from "../services/users.service.js";
+import CustomError from "../utils/errors/CustomError.util.js";
+import errors from "../utils/errors/errors.utils.js";
 
 class SessionsController {
   constructor() {
@@ -83,10 +85,7 @@ class SessionsController {
           message: "Verified user!",
         })
       } else {
-        return res.json({
-          statusCode: 400,
-          message: "Invalid verified token",
-        })
+        CustomError.new(errors.token)
       }
     } catch (error) {
       return next(error)

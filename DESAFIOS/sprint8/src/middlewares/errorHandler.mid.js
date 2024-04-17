@@ -1,7 +1,14 @@
+import winston from "../utils/winston.util.js";
+
+
 function errorHandler(error, req, res, next) {
-  console.error(error);
-  return res.status(error.statusCode ||500).json({
-    statusCode: error.statusCode || 500,
+  if (error.statusCode) {
+    error.statusCode = 500
+    winston.ERROR(error.message)
+  }
+  winston.WARN(error.message);
+  return res.json({
+    statusCode: error.statusCode,
     url: `${req.method} ${req.url}`,
     message:  error.message,
   });

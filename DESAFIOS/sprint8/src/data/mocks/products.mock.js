@@ -1,5 +1,6 @@
 import { faker } from "@faker-js/faker"
 import repository from "../../repositories/products.rep.js"
+import winston from "../../utils/winston.util.js"
 
 function productsMock() {
     return {
@@ -14,6 +15,6 @@ export default async function createProducts() {
         const data = productsMock()
         await repository.create(data)
     } catch (error) {
-        console.log(error)
+        winston.ERROR(error)
     }
 }

@@ -24,7 +24,6 @@ class ProductManager {
 
   async create(data) {
 
-    console.log(data)
     const productsFromJson = await fs.promises.readFile("./src/data/fs/files/products.json")
     const productsArray = JSON.parse(productsFromJson)
     try {
