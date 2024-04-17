@@ -1,6 +1,6 @@
 import args from "../utils/args.util.js"
 import dbConnection from "../utils/db.js"
-import winston from "../utils/winston.util.js"
+import winston from "../utils/loggers/loggers.index.js"
 
 const environment = args.env
 

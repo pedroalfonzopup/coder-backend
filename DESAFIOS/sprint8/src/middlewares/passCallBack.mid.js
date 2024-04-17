@@ -1,7 +1,7 @@
 import passport from "passport";
 import errors from "../utils/errors/errors.utils.js";
 import CustomError from "../utils/errors/CustomError.util.js"
-import winston from "../utils/winston.util.js";
+import winston from "../utils/loggers/loggers.index.js";
 
 export default (strategy) => {
   return async (req, res, next) => {

@@ -1,5 +1,5 @@
 import dao from "../data/index.factory.js"
-import winston from "./winston.util.js";
+import winston from "./loggers/loggers.index.js";
 const { users, products } = dao
 
 export default (socket) => {

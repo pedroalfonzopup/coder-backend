@@ -22,7 +22,7 @@ import pathHandler from "./src/middlewares/pathHandler.mid.js";
 import { createServer } from "http";
 import { Server } from "socket.io";
 import { engine } from "express-handlebars";
-import winston from "./src/utils/winston.util.js";
+import winston from "./src/utils/loggers/loggers.index.js";
 
 const server = express();
 const PORT = env.PORT || 8080;

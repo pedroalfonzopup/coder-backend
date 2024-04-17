@@ -1,4 +1,4 @@
-import winston from "../src/utils/winston.util.js";
+import winston from "../src/utils/loggers/loggers.index.js";
 
 winston.INFO("socket");
 

@@ -1,4 +1,4 @@
-import winston from "../utils/winston.util.js";
+import winston from "../utils/loggers/loggers.index.js";
 
 
 function errorHandler(error, req, res, next) {

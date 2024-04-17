@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker"
 import repository from "../../repositories/products.rep.js"
-import winston from "../../utils/winston.util.js"
+import winston from "../../utils/loggers/loggers.index.js"
 
 function productsMock() {
     return {
