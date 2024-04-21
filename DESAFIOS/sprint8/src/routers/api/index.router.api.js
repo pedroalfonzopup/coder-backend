@@ -4,6 +4,7 @@ import ProductsRouter from "./products.router.api.js"
 import OrdersRouter from "./orders.router.api.js"
 import SessionsRouter from "./sessions.router.api.js"
 // import cookieRouter from "./cookie.router.api.js"
+import { testLogs } from "../../controllers/loggers.controllers.js";
 
 import passCallBackMid from "../../middlewares/passCallBack.mid.js";
 
@@ -22,5 +23,6 @@ export default class ApiRouter extends CustomRouter {
         this.router.use("/orders", passCallBackMid("jwt"), ordersRouter)
         this.router.use("/sessions", sessionsRouter)
         this.router.use("/products", productsRouter)
-    }
+        this.read("/loggers", ["PUBLIC"], testLogs)
+}
 }
