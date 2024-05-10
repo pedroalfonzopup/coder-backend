@@ -1,6 +1,6 @@
-import __dirname from "./swagger.utils.js"
+import __dirname from "../../../utils.js"
 
-const options = {
+const SwaggerOptions = {
     definition: {
         openapi: "3.0.1",
         info: {
@@ -11,4 +11,4 @@ const options = {
     apis: [`${__dirname}/src/docs/*.yaml`]
 }
 
-export default options
+export default SwaggerOptions
