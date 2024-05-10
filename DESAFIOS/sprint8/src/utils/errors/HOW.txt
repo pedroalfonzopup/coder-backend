@@ -1,0 +1,18 @@
+Importamos ambas utilidades al controlador o enrutador
+el cual queremos tenga los errores controlador y
+personalizados.
+
+import CustomError from "../utils/errors/CustomError.util.js";
+import errors from "../utils/errors/errors.util.js";
+
+Ahora dependiendo de que error querramos costumizar, 
+como un Not Found, en vez de cada vez codear una respuesta
+vamos a normalizarla de la siguiente manera.
+
+CustomError.new(errors.notFound)
+
+ " Clase " " creamos error con el mensaje y codigo de .notFound"
+
+ errors. (Tiene todos los valores de errores normalizados)
+
+ // ESTO ES SIN VER LA IMPLEMENTACION A CUSTOM ROUTER

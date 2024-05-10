@@ -1,0 +1,30 @@
+<main class="Form">
+    <h1 class="Form-welcome">LETS ADD YOUR PRODUCT</h1>
+    <h3 class="Form-paragraph">To do so, please fill this formulary!</h3>
+    <form class="Formulary">
+        <fieldset class="Formulary-box">
+            <label for="title">Title</label>
+            <input class="Formulary-box_input" type="text" id="title">
+        </fieldset>
+        <fieldset class="Formulary-box">
+            <label for="photo">Photo</label>
+            <input class="Formulary-box_input" type="text" id="photo">
+        </fieldset>
+        <fieldset class="Formulary-box">
+            <label for="price">Price</label>
+            <input class="Formulary-box_input" type="number" id="price">
+        </fieldset>
+        <fieldset class="Formulary-box">
+            <label for="stock">Stock</label>
+            <input class="Formulary-box_input" type="number" id="stock">
+        </fieldset>
+        <button
+            id="newProduct"
+            type="button"
+            class="Formulary-button"
+        >ADD</button>
+    </form>
+
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/form.js"></script>
