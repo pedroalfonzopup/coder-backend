@@ -1,2 +1,12 @@
 [33mWARN[39m: Testing WARN log
 [31mERROR[39m: Testing ERROR log
+[33mWARN[39m: E11000 duplicate key error collection: mydb.users index: email_1 dup key: { email: "Pedroalfonzopup@gmail.com" }
+[33mWARN[39m: E11000 duplicate key error collection: mydb.users index: email_1 dup key: { email: "Pedroalfonzopup@gmail.com" }
+[33mWARN[39m: GET /api/session/login not found path
+[33mWARN[39m: GET /api/sessions/login not found path
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials

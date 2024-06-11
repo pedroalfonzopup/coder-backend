@@ -24,6 +24,10 @@ import { Server } from "socket.io";
 import { engine } from "express-handlebars";
 import winston from "./src/utils/loggers/loggers.index.js";
 
+import SwaggerOptions from "./src/utils/swagger/swagger.js";
+import swaggerJSDoc from "swagger-jsdoc";
+import {serve, setup} from "swagger-ui-express"
+
 const server = express();
 const PORT = env.PORT || 8080;
 const ready = () => {
@@ -35,6 +39,10 @@ const socketServer = new Server(httpServer);
 httpServer.listen(PORT, ready);
 socketServer.on("connection", socketUtils);
 
+// SWAGGER
+
+const specs = swaggerJSDoc(SwaggerOptions)
+server.use("/api/docs", serve, setup(specs))
 
 // VISTAS
 server.engine("handlebars", engine());
