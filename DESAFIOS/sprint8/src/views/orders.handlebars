@@ -1,7 +1,7 @@
 <main class="Orders">
     <h1 class="Orders-welcome">MY CART</h1>
     {{#if message}}
-        message
+        {{message}}
         {{else}}
         <section>
             <article class="Orders-header">
@@ -24,18 +24,19 @@
                     >X</button>
                 </article>
             {{/each}}
+            <a class="Orders-button_purchase" href="/api/payments/checkout"><button id="CheckoutPurchase">PURCHASE</button></a>
         </section>
         <span class="Paginate-container">
             {{#if prev}}
                 <a
                 class="Paginate-prev"
-                href="/?title={{filter}}&page={{prev}}"
+                href="/orders/?title={{filter}}&page={{prev}}"
                 >PREV</a>
             {{/if}}
             {{#if next}}
                 <a
                 class="Paginate-next"
-                href="/?title={{filter}}&page={{next}}"
+                href="/orders/?title={{filter}}&page={{next}}"
                 >NEXT</a>
             {{/if}}
         </span> 

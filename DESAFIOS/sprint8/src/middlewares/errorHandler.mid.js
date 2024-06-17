@@ -2,7 +2,7 @@ import winston from "../utils/loggers/loggers.index.js";
 
 
 function errorHandler(error, req, res, next) {
-  if (error.statusCode) {
+  if (error) {
     error.statusCode = 500
     winston.ERROR(error.message)
   }

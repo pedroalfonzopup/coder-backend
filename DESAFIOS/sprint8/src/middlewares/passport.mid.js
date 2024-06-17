@@ -6,7 +6,8 @@ const { users } = dao
 import { Strategy as LocalStrategy } from "passport-local";
 import { Strategy as GoogleStrategy } from "passport-google-oauth2";
 import { ExtractJwt, Strategy as JwtStrategy } from "passport-jwt";
-const { GOOGLE_ID, GOOGLE_CLIENT, SECRET_KEY } = process.env;
+import env from "../utils/env.util.js";
+const { GOOGLE_ID, GOOGLE_CLIENT, SECRET_KEY } = env;
 import errors from "../utils/errors/errors.utils.js";
 
 passport.use(

@@ -9,7 +9,7 @@ class MongoManager {
     async create(data) {
         try {
             const one = await this.model.create(data)
-            return one._id
+            return one
         } catch (error) {
             throw error
         }

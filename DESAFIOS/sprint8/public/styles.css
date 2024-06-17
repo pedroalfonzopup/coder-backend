@@ -199,6 +199,7 @@
     margin: 20px;
     padding: 10px;
     border-radius: 5%;
+    margin-bottom: 140px;
 
     display: flex;
     flex-direction: column;
@@ -326,6 +327,7 @@
     margin: 20px;
     padding: 10px;
     border-radius: 5%;
+    margin-bottom: 130px;
 
     display: flex;
     flex-direction: column;
@@ -410,6 +412,7 @@
     margin: 20px;
     padding: 10px;
     border-radius: 5%;
+    margin-bottom: 190px;
 
     display: flex;
     flex-direction: column;
@@ -528,9 +531,10 @@
 
 .Orders {
     background-color: rgb(101, 83, 201);
-    margin: 20px;
+    margin: 33vh;
     padding: 10px;
     border-radius: 5%;
+    width: 90vh;
 
     display: flex;
     flex-direction: column;
@@ -576,6 +580,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.Orders-button_purchase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    color: bisque;
+    
+    margin: 4px;
+}
+
+.Orders-button_purchase button {
+    width: 100px;
+    background-color: rgb(36, 82, 32);
+    border-radius: 5%;
+    color: bisque;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Cart-container {
@@ -757,4 +783,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* THANKS */
+
+.Thanks {
+    background-color: rgb(101, 83, 201);
+    margin: 33vh;
+    padding: 10px;
+    border-radius: 5%;
+    width: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4px;
+
+    text-decoration: none;
+    color: bisque;
+    text-decoration-line: none;
+}
+
+.Thanks-welcome {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(23, 0, 29);
+    border-radius: 25%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

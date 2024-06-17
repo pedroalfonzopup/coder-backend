@@ -20,6 +20,14 @@ class OrdersService {
             throw error
         }
     }
+    readByUser = async (user_id) => {
+        try {
+            const response = await this.repository.readOne(user_id)
+            return response
+        } catch (error) {
+            throw error
+        }
+    }
     create = async (data) => {
         try {
             const response = await this.repository.create(data)

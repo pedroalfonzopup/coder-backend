@@ -1,0 +1,533 @@
+components:
+
+  responses:
+    register:
+      type: object
+      properties:
+        statusCode: Indicador del estado de la respuesta
+        payload: Aviso de que el usuario ha sido registrado correctamente
+      example:
+        statusCode: 201
+        payload: Registered!
+
+    login:
+      type: object
+      properties:
+        statusCode: Indicador del estado de la respuesta
+        payload: Aviso de que el usuario se ha logeado correctamente
+        cookie: 
+          token: 
+      example:
+        statusCode: 200
+        payload: Logged in succesfully!
+        cookie: 
+          token:
+            maxAge: 1 * 20 * 60 * 60 * 1000
+            httpOnly: true
+
+    loginJwt:
+      type: object
+      properties:
+        statusCode: Indicador del estado de la respuesta
+        payload: Devuele usuario de la session
+      example:
+        statusCode: 200
+        payload:
+          email: Riobomamolio@gmail.com
+          role: 1
+
+    googleCallback:
+      type: object
+      properties:
+        statusCode: Indicador del estado de la respuesta
+        payload: Aviso de inicio de session con google correctamente
+      example:
+        statusCode: 200
+        payload: "Logged in with google!"
+
+    signout:
+      type: object
+      properties:
+        statusCode: Indicador del estado de la respuesta
+        payload: Aviso de cerrado de session!
+      example:
+        statusCode: 200
+        payload: "Signed out succesfully!"
+
+    signoutCallback:
+      type: object
+      properties:
+        statusCode: Indicador del estado de la respuesta
+        payload: Callback de cerrado de session
+      example:
+        statusCode: 200
+        payload: Already done
+      
+    badauth:
+      type: object
+      properties:
+        statusCode: Indicador del estado de la respuesta
+        payload: Bad auth
+      example:
+        statusCode: 200
+        payload: Bad auth
+
+    verifyAccount:
+      type: object
+      properties:
+        statusCode: Indicador del estado de la respuesta
+        payload: Aviso de usuario verificado correctamente
+      example:
+        statusCode: 200
+        payload: Verified user!
+  
+    auth:
+      type: object
+      properties:
+        statusCode:
+          type: string
+          description: Estado de la solicitud
+        message:
+          type: string
+          description: Descripción del error
+      example:
+        statusCode: 401
+        message: Invalid credentials
+    
+    forbidden:
+      type: object
+      properties:
+        statusCode:
+          type: string
+          description: Estado de la solicitud
+        message:
+          type: string
+          description: Descripción del error
+      example:
+        statusCode: 403
+        message: Forbidden
+    
+    no8char:
+      type: object
+      properties:
+        statusCode:
+          type: string
+          description: Estado de la solicitud
+        message:
+          type: string
+          description: Descripción del error
+      example:
+        statusCode: 400
+        message: Password must have at least 8 characters
+    
+    notFound:
+      type: object
+      properties:
+        statusCode:
+          type: string
+          description: Indicador del estado de la respuesta
+        message:
+          type: string
+          description: Indicador de qué error se cometió
+      example:
+        statusCode: 404
+        message: Not found
+    
+    fatal:
+      type: object
+      properties:
+        statusCode:
+          type: string
+          description: Indicador del estado de la respuesta
+        message:
+          type: string
+          description: Indicador de qué error se cometió
+      example:
+        statusCode: 500
+        message: fatal
+
+    error:
+      type: object
+      properties:
+        statusCode:
+          type: string
+          description: Indicador del estado de la respuesta
+        message:
+          type: string
+          description: Indicador de qué error se cometió
+      example:
+        statusCode: 400
+        message: error
+
+    token:
+      type: object
+      properties:
+        statusCode:
+          type: string
+          description: Indicador del estado de la respuesta
+        message:
+          type: string
+          description: Indicador de qué error se cometió
+      example:
+        statusCode: 400
+        message: Invalid verified token!
+
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: token
+
+paths:
+  /api/sessions:
+
+    post:
+      summary: Jwt
+      tags: 
+        - Session
+      security:
+        - cookieAuth: ["PUBLIC"]
+      responses:
+        "201":
+          description: Jwt exitoso
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/loginJwt'
+        "400":
+          description: Token invalido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/token'
+        "401":
+          description: Credenciales invalidas
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/auth'
+        "403":
+          description: Acceso no permitido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/forbidden'
+        "500":
+          description: Fallo del servidor al loggear con jwt
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/fatal'
+
+  /api/sessions/register:
+
+    post:
+      summary: Registrar un usuario
+      tags: 
+        - Session
+      security:
+        - cookieAuth: ["PUBLIC"]
+      responses:
+        "201":
+          description: Registro exitoso
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/register'
+        "400":
+          description: Token invalido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/token'
+        "401":
+          description: Credenciales invalidas
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/auth'
+        "403":
+          description: Acceso no permitido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/forbidden'
+        "500":
+          description: Falla del servidor al registrar un usuario
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/fatal'
+
+  /api/sessions/login:
+
+    post:
+      summary: Login
+      tags: 
+        - Session
+      security:
+        - cookieAuth: ["PUBLIC"]
+      responses:
+        "201":
+          description: Login exitoso
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/login'
+        "400":
+          description: Token invalido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/token'
+        "401":
+          description: Credenciales invalidas
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/auth'
+        "403":
+          description: Acceso no permitido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/forbidden'
+        "500":
+          description: Falla del servidor al loggear al usuario
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/fatal'
+  
+  /api/sessions/badauth:
+
+    get:
+      summary: Badauth
+      tags: 
+        - Session
+      security:
+        - cookieAuth: ["PUBLIC"]
+      responses:
+        "200":
+          description: Avisa al usuario de un badauth
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/badauth'
+        "400":
+          description: Token invalido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/token'
+        "403":
+          description: Acceso no permitido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/forbidden'
+        "500":
+          description: Falla al redireccionar al usuario
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/fatal'
+
+  /api/sessions/verify:
+    
+    post:
+      summary: Verificar cuenta
+      tags: 
+        - Session
+      security:
+        - cookieAuth: ["PUBLIC"]
+      responses:
+        "201":
+          description: Verificación exitosa
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/verifyAccount'
+        "400":
+          description: Token invalido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/token'
+        "401":
+          description: Credenciales invalidas
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/auth'
+        "403":
+          description: Acceso no permitido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/forbidden'
+        "500":
+          description: Falla del servidor al verificar una cuenta
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/fatal'
+
+  /api/sessions/google:
+
+    post:
+      summary: Iniciar sesion con google
+      tags: 
+        - Session
+      security:
+        - cookieAuth: ["PUBLIC"]
+      responses:
+        "400":
+          description: Token invalido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/token'
+        "401":
+          description: Credenciales invalidas
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/auth'
+        "403":
+          description: Acceso no permitido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/forbidden'
+        "500":
+          description: Falla del servidor al iniciar sesion con google
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/fatal'
+
+  /api/sessions/google/callback:
+
+    post:
+      summary: Callback de inicio de sesion de google
+      tags: 
+        - Session
+      security:
+        - cookieAuth: ["PUBLIC"]
+      responses:
+        "200":
+          description: Inicio de sesion con google 
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/googleCallback'
+        "400":
+          description: Token invalido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/token'
+        "401":
+          description: Credenciales invalidas
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/auth'
+        "403":
+          description: Acceso no permitido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/forbidden'
+        "500":
+          description: Falla del servidor iniciar sesion con google
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/fatal'
+
+  /api/sessions/signout:
+
+    post:
+      summary: Cerrado de sesion
+      tags: 
+        - Session
+      security:
+        - cookieAuth: ["PUBLIC"]
+      responses:
+        "201":
+          description: Cerrado de sesion exitoso
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/signout'
+        "400":
+          description: Token invalido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/token'
+        "401":
+          description: Credenciales invalidas
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/auth'
+        "403":
+          description: Acceso no permitido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/forbidden'
+        "500":
+          description: Falla del servidor al cerrar sesion
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/fatal'
+
+  /api/sessions/signout/cb:
+
+    post:
+      summary: Callback de cerrado de sesion
+      tags: 
+        - Session
+      security:
+        - cookieAuth: ["PUBLIC"]
+      responses:
+        "200":
+          description: Cerrado de sesion exitoso
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/signoutCallback'
+        "400":
+          description: Token invalido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/token'
+        "401":
+          description: Credenciales invalidas
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/auth'
+        "403":
+          description: Acceso no permitido
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/forbidden'
+        "500":
+          description: Falla del servidor cerrar la sesion de un usuario
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/fatal'
+
+
+
+
+

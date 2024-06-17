@@ -1,5 +1,5 @@
 import { createTransport } from "nodemailer";
-
+import env from "./env.util.js";
 async function sendEmail(data) {
     try {
         const transport = createTransport({
@@ -10,7 +10,7 @@ async function sendEmail(data) {
         await transport.sendMail({
             from: `COSMOS <${env.GOOGLE_APP_EMAIL}>`,
             to: data.email,
-            subject: `USER ${data.name.toUppercase()} REGISTERED!`,
+            subject: `USER ${(data.name).toUppercase} REGISTERED!`,
             html: `
             <h1>USER REGISTERED!<h1>
             <p>PLEASE VERIFY TO GAIN ACCESS TO THE WHOLE WEB</p>

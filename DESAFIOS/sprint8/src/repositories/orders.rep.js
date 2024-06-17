@@ -14,6 +14,7 @@ class OrdersRep {
     }
     read = async ({ filter, sortAndPaginate }) => await this.model.read({filter, sortAndPaginate})
     readOne = async (oid) => await this.model.readOne(oid)
+    readByUser = async (user_id) => await this.model.readOne(user_id)
     update = async (oid, data) => await this.model.update(oid, data)
     destroy = async (oid) => await this.model.destroy(oid)
 }

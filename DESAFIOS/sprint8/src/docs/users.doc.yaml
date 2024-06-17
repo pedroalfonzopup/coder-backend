@@ -1,105 +1,119 @@
 components:
   schemas:
-    Product:
+    User:
       type: object
       properties:
-        title:
-          description: Nombre del producto
+        name:
+          description: Nombre del usuario
           type: string
         photo:
-          description: Foto del producto
+          description: Foto del usuario
           type: string
-        price:
-          description: Precio del producto
-          type: number
-        stock:
-          description: Stock del producto
+        email:
+          description: Email del usuario
+          type: string
+        role:
+          description: Rol del usuario
           type: number
       example:
-        title: Silla
-        photo: https://th.bing.com/th/id/OIP.PD-09jPYnXXOhgATxAsg0wHaHa?rs=1&pid=ImgDetMain
-        price: 30
-        stock: 20
+        name: Raul Guitierrez
+        photo: https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg
+        email: Raulparbada@gmail.com
+        role: 1
 
-    ProductUpdate:
+    UserUpdate:
       type: object
       properties:
         title:
-          description: Nombre del producto
+          description: Nombre del usuario
           type: string
         photo:
-          description: Foto del producto
+          description: Foto del usuario
           type: string
-        price:
-          description: Precio del producto
-          type: number
-        stock:
-          description: Stock del producto
+        email:
+          description: Email del usuario
+          type: string
+        role:
+          description: Rol del usuario
           type: number
       example:
-        title: Silla
-        photo: https://th.bing.com/th/id/OIP.PD-09jPYnXXOhgATxAsg0wHaHa?rs=1&pid=ImgDetMain
-        price: 30
-        stock: 20
+        name: Raul Guitierrez
+        photo: https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg
+        email: Raulparbada@gmail.com
+        role: 1
 
   responses:
     create:
       type: object
       properties:
         statusCode: Indicador del estado de la respuesta
-        payload: Documento del producto creado correctamente
+        payload: Documento del usuario creado correctamente
       example:
         statusCode: 201
         payload:
-          _id: 6541aae1e7b2683607f2b4df
-          title: Silla
-          photo: https://th.bing.com/th/id/OIP.PD-09jPYnXXOhgATxAsg0wHaHa?rs=1&pid=ImgDetMain
-          price: 34
-          stock: 20
+          _id: 541aae1e7b2132607f2b4df
+          name: Raul Guitierrez
+          photo: https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg
+          email: Raulparbada@gmail.com
+          role: 1
 
     read:
       type: object
       properties:
         statusCode: Indicador del estado de la respuesta
-        payload: Devuelve los documentos de productos del servidor
+        payload: Devuelve los documentos de usuarios del servidor
       example:
         statusCode: 200
         payload:
-          - _id: 6541aae1e7b2683607f2b4df
-            title: Silla
-            photo: https://th.bing.com/th/id/OIP.PD-09jPYnXXOhgATxAsg0wHaHa?rs=1&pid=ImgDetMain
-            price: 34
-            stock: 20
-          - _id: 6541aae1e742683607f2b4df
-            title: Sillita
-            photo: https://th.bing.com/th/id/OIP.PD-09jPYnXXOhgATxAsg0wHaHa?rs=1&pid=ImgDetMain
-            price: 20
-            stock: 14
-          - _id: 6541aae1e7b2683607f2b442
-            title: Sillota
-            photo: https://th.bing.com/th/id/OIP.PD-09jPYnXXOhgATxAsg0wHaHa?rs=1&pid=ImgDetMain
-            price: 40
-            stock: 21
+          - _id: 541aae1e7b21326fggrf2b4df
+            name: Raul Guitierrez
+            photo: https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg
+            email: Raulparbada@gmail.com
+            role: 1
+          - _id: 541aae1e7b2132607f2b4df
+            name: James Guitierrez
+            photo: https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg
+            email: JamesLarbada@gmail.com
+            role: 1
+          - _id: 541aae1e7b2132607f2b1241f
+            name: Pirmo Guitierrez
+            photo: https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg
+            email: Forndepirmo@gmail.com
+            role: 1
 
     readOne:
       type: object
       properties:
         statusCode: Indicador del estado de la respuesta
-        payload: Devuelve el documento del producto correspondiente al id
+        payload: Devuelve el documento del usuario correspondiente al id
       example:
         statusCode: 200
         payload:
-          _id: 6541aae1e7b2683607f2b4df
-          title: Silla
-          photo: https://th.bing.com/th/id/OIP.PD-09jPYnXXOhgATxAsg0wHaHa?rs=1&pid=ImgDetMain
-          price: 34
-          stock: 20
+          _id: 541aae1e7b2132607f2b1241f
+          name: Pirmo Guitierrez
+          photo: https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg
+          email: Forndepirmo@gmail.com
+          role: 1
+
+    readByEmail:
+      type: object
+      properties:
+        statusCode: Indicador del estado de la respuesta
+        payload: Devuelve el documento del usuario correspondiente al email
+      example:
+        statusCode: 200
+        payload:
+          _id: 541aae1e7b2132607f2b1241f
+          name: Pirmo Guitierrez
+          photo: https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg
+          email: Forndepirmo@gmail.com
+          role: 1
 
     update:
       type: object
       properties:
         statusCode: Indicador del estado de la respuesta
-        payload: ObjectId del producto modificado
+        payload: ObjectId del usuario modificado
       example:
         statusCode: 200
         payload: 6541aae1e7b2683607f2b4df
@@ -108,7 +122,7 @@ components:
       type: object
       properties:
         statusCode: Indicador del estado de la respuesta
-        payload: ObjectId del producto eliminado
+        payload: ObjectId del usuario eliminado
       example:
         statusCode: success
         payload: 6541aae1e7b2683607f2b4df
@@ -211,27 +225,31 @@ components:
       name: token
 
 paths:
-  /api/products:
+  /api/users:
 
     post:
-      summary: Agregar un nuevo producto al eccomerce
+      summary: Agregar un nuevo user a la base de datos
       tags: 
-        - Product
-      security:
-        - cookieAuth: ["ADMIN"]
+        - User
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#components/schemas/Product'
+              $ref: '#components/schemas/User'
       responses:
         "201":
-          description: Éxito en la carga de un producto
+          description: Éxito en la carga de un usuario
           content:
             application/json:
               schema:
                 $ref: '#components/responses/create'
+        "400":
+          description: La contraseña debe tener almenos 8 digitos
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/no8char'
         "401":
           description: Credenciales invalidas
           content:
@@ -252,9 +270,11 @@ paths:
                 $ref: '#components/responses/fatal'
 
     get:
-      summary: Leer todos los productos del servidor
+      summary: Leer todos los usuarios del servidor
       tags:
-        - Product
+        - User
+      security:
+        - cookieAuth: ["ADMIN"]
       parameters:
         - name: page
           in: query
@@ -284,19 +304,19 @@ paths:
               schema:
                 $ref: '#components/responses/fatal'
 
-  /api/products/{pid}:
+  /api/users/{uid}:
 
     put:
-      summary: Actualizar los datos de un producto
+      summary: Actualizar los datos de un usuario
       tags:
-        - Product
+        - User
       security:
         - cookieAuth: ["ADMIN"]
       parameters:
-        - name: pid
+        - name: uid
           in: path
           required: true
-          description: ObjectId del producto a modificar
+          description: ObjectId del usuario a modificar
           schema:
             $type: string
       requestBody:
@@ -304,14 +324,20 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#components/schemas/ProductUpdate'
+              $ref: '#components/schemas/UserUpdate'
       responses:
         "200":
-          description: Éxito en la actualizacion del producto
+          description: Éxito en la actualizacion del usuario
           content:
             application/json:
               schema:
                 $ref: '#components/responses/create'
+        "400":
+          description: La contraseña debe tener almenos 8 digitos
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/no8char'
         "401":
           description: Credenciales invalidas
           content:
@@ -325,32 +351,34 @@ paths:
               schema:
                 $ref: '#components/responses/forbidden'
         "404":
-          description: Producto no encontrado
+          description: Usuario no encontrado
           content:
             application/json:
               schema:
                 $ref: '#components/responses/notFound'
         "500":
-          description: Falla del servidor al actualizar un producto
+          description: Falla del servidor al actualizar un usuario
           content:
             application/json:
               schema:
                 $ref: '#components/responses/fatal'
 
     get:
-      summary: Leer los datos de un producto
+      summary: Leer los datos de un usuario
       tags:
-        - Product
+        - User
+      security:
+        - cookieAuth: ["ADMIN"]
       parameters:
-        - name: pid
+        - name: uid
           in: path
           required: true
-          description: ObjectId del producto a leer
+          description: ObjectId del usuario a leer
           schema:
             $type: string
       responses:
         "200":
-          description: Éxito al leer el producto
+          description: Éxito al leer el usuario
           content:
             application/json:
               schema:
@@ -369,21 +397,21 @@ paths:
                 $ref: '#components/responses/fatal'
 
     delete:
-      summary: Eliminar un producto
+      summary: Eliminar un usuario
       tags:
-        - Product
+        - User
       security:
         - cookieAuth: ["ADMIN"]
       parameters:
-        - name: pid
+        - name: uid
           in: path
           required: true
-          description: ObjectId del producto a eliminar
+          description: ObjectId del usuario a eliminar
           schema:
             $type: string
       responses:
         "200":
-          description: Éxito en borrar el producto
+          description: Éxito en borrar el usuario
           content:
             application/json:
               schema:
@@ -401,13 +429,48 @@ paths:
               schema:
                 $ref: '#components/responses/forbidden'
         "404":
-          description: Producto no encontrado
+          description: Usuario no encontrado
           content:
             application/json:
               schema:
                 $ref: '#components/responses/notFound'
         "500":
-          description: Falla del servidor al borrar el producto
+          description: Falla del servidor al borrar el usuario
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/fatal'
+
+  /api/users/email/{email}:
+
+    get:
+      summary: Leer los datos de un usuario correspondiente al email dado
+      tags:
+        - User
+      security:
+        - cookieAuth: ["ADMIN"]
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          description: ObjectId del usuario a leer
+          schema:
+            $type: string
+      responses:
+        "200":
+          description: Éxito al leer el usuario
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/readByEmail'
+        "404":
+          description: Documento no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/notFound'
+        "500":
+          description: Falla del servidor al leer el documento
           content:
             application/json:
               schema:

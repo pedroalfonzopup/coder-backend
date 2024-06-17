@@ -1,105 +1,123 @@
 components:
   schemas:
-    Product:
+    Orders:
       type: object
       properties:
-        title:
-          description: Nombre del producto
+        user_id:
+          description: Id del usuario de la orden
           type: string
-        photo:
-          description: Foto del producto
+        product_id:
+          description: Id de los productos de la orden
           type: string
-        price:
-          description: Precio del producto
+        quantity:
+          description: Precio de la orden
           type: number
-        stock:
-          description: Stock del producto
-          type: number
+        state:
+          description: estado de la orden
+          type: string
       example:
-        title: Silla
-        photo: https://th.bing.com/th/id/OIP.PD-09jPYnXXOhgATxAsg0wHaHa?rs=1&pid=ImgDetMain
-        price: 30
-        stock: 20
+        user_id: 12308dfs97124798hjfsd
+        product_id: paosj018717986742332
+        quantity: 20
+        state: reserved
 
-    ProductUpdate:
+    OrdersUpdate:
       type: object
       properties:
-        title:
-          description: Nombre del producto
+        user_id:
+          description: Id del usuario de la orden
           type: string
-        photo:
-          description: Foto del producto
+        product_id:
+          description: Id de los productos de la orden
           type: string
-        price:
-          description: Precio del producto
+        quantity:
+          description: Precio de la orden
           type: number
-        stock:
-          description: Stock del producto
-          type: number
+        state:
+          description: estado de la orden
+          type: string
       example:
-        title: Silla
-        photo: https://th.bing.com/th/id/OIP.PD-09jPYnXXOhgATxAsg0wHaHa?rs=1&pid=ImgDetMain
-        price: 30
-        stock: 20
+        user_id: 12308dfs97124798hjfsd
+        product_id: paosj018717986742332
+        quantity: 20
+        state: reserved
 
   responses:
     create:
       type: object
       properties:
         statusCode: Indicador del estado de la respuesta
-        payload: Documento del producto creado correctamente
+        payload: Documento de la orden creado correctamente
       example:
         statusCode: 201
         payload:
-          _id: 6541aae1e7b2683607f2b4df
-          title: Silla
-          photo: https://th.bing.com/th/id/OIP.PD-09jPYnXXOhgATxAsg0wHaHa?rs=1&pid=ImgDetMain
-          price: 34
-          stock: 20
+          user_id: 12308dfs97124798hjfsd
+          product_id: paosj018717986742332
+          quantity: 20
+          state: reserved
 
     read:
       type: object
       properties:
         statusCode: Indicador del estado de la respuesta
-        payload: Devuelve los documentos de productos del servidor
+        payload: Devuelve los documentos de todas las ordenes del servidor
       example:
         statusCode: 200
         payload:
-          - _id: 6541aae1e7b2683607f2b4df
-            title: Silla
-            photo: https://th.bing.com/th/id/OIP.PD-09jPYnXXOhgATxAsg0wHaHa?rs=1&pid=ImgDetMain
-            price: 34
-            stock: 20
-          - _id: 6541aae1e742683607f2b4df
-            title: Sillita
-            photo: https://th.bing.com/th/id/OIP.PD-09jPYnXXOhgATxAsg0wHaHa?rs=1&pid=ImgDetMain
-            price: 20
-            stock: 14
-          - _id: 6541aae1e7b2683607f2b442
-            title: Sillota
-            photo: https://th.bing.com/th/id/OIP.PD-09jPYnXXOhgATxAsg0wHaHa?rs=1&pid=ImgDetMain
-            price: 40
-            stock: 21
+          - _id: 897471896234875ghdw2
+            user_id: 123024fs97124798h2jfsd
+            product_id: paosj018735986742332
+            quantity: 15
+            state: reserved
+          - _id: 897471142246875ghdw2
+            user_id: 12308dfs152124798hjfsd
+            product_id: faosj018717986742332
+            quantity: 25
+            state: reserved
+          - _id: 897471832246875ghdw2 
+            user_id: 245308dfs97124798hjfsd
+            product_id: loisj018717986742332
+            quantity: 20
+            state: reserved
 
     readOne:
       type: object
       properties:
         statusCode: Indicador del estado de la respuesta
-        payload: Devuelve el documento del producto correspondiente al id
+        payload: Devuelve el documento de la orden correspondiente al id
       example:
         statusCode: 200
         payload:
-          _id: 6541aae1e7b2683607f2b4df
-          title: Silla
-          photo: https://th.bing.com/th/id/OIP.PD-09jPYnXXOhgATxAsg0wHaHa?rs=1&pid=ImgDetMain
-          price: 34
-          stock: 20
+          _id: 897471832246875ghdw2 
+          user_id: 245308dfs97124798hjfsd
+          product_id: loisj018717986742332
+          quantity: 20
+          state: reserved
+
+    readByUser:
+      type: object
+      properties:
+        statusCode: Indicador del estado de la respuesta
+        payload: Devuelve las ordenes correspondientes al id del usuario
+      example:
+        statusCode: 200
+        payload:
+          - order_id: 437471832246875ghdoi 
+            user_id: 245308dfs97124798hjfsd
+            product_id: loisj018717986742332
+            quantity: 20
+            state: reserved
+          - order_id: 897471832246875ghdw2 
+            user_id: 245308dfs97124798hjfsd
+            product_id: 4354j018717286742332
+            quantity: 10
+            state: reserved
 
     update:
       type: object
       properties:
         statusCode: Indicador del estado de la respuesta
-        payload: ObjectId del producto modificado
+        payload: ObjectId de la orden modificada
       example:
         statusCode: 200
         payload: 6541aae1e7b2683607f2b4df
@@ -108,7 +126,7 @@ components:
       type: object
       properties:
         statusCode: Indicador del estado de la respuesta
-        payload: ObjectId del producto eliminado
+        payload: ObjectId de la orden eliminada
       example:
         statusCode: success
         payload: 6541aae1e7b2683607f2b4df
@@ -211,23 +229,23 @@ components:
       name: token
 
 paths:
-  /api/products:
+  /api/orders:
 
     post:
-      summary: Agregar un nuevo producto al eccomerce
+      summary: Crear una nueva orden
       tags: 
-        - Product
+        - Order
       security:
-        - cookieAuth: ["ADMIN"]
+        - cookieAuth: ["PUBLIC"]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#components/schemas/Product'
+              $ref: '#components/schemas/Order'
       responses:
         "201":
-          description: Éxito en la carga de un producto
+          description: Éxito en la creación de la orden
           content:
             application/json:
               schema:
@@ -245,16 +263,18 @@ paths:
               schema:
                 $ref: '#components/responses/forbidden'
         "500":
-          description: Falla del servidor al crear un producto
+          description: Falla del servidor al crear una orden
           content:
             application/json:
               schema:
                 $ref: '#components/responses/fatal'
 
     get:
-      summary: Leer todos los productos del servidor
+      summary: Leer todas las ordenes del servidor
       tags:
-        - Product
+        - Order
+      security:
+        - cookieAuth: ["ADMIN"]
       parameters:
         - name: page
           in: query
@@ -266,7 +286,7 @@ paths:
           description: Numero de documentos a mostrar por página
       responses:
         "200":
-          description: Éxito al leer los productos
+          description: Éxito al leer las ordenes
           content:
             application/json:
               schema:
@@ -284,19 +304,19 @@ paths:
               schema:
                 $ref: '#components/responses/fatal'
 
-  /api/products/{pid}:
+  /api/orders/{oid}:
 
     put:
-      summary: Actualizar los datos de un producto
+      summary: Actualizar los datos de una orden
       tags:
-        - Product
+        - Order
       security:
         - cookieAuth: ["ADMIN"]
       parameters:
-        - name: pid
+        - name: oid
           in: path
           required: true
-          description: ObjectId del producto a modificar
+          description: ObjectId de la orden a modificar
           schema:
             $type: string
       requestBody:
@@ -304,10 +324,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#components/schemas/ProductUpdate'
+              $ref: '#components/schemas/OrderUpdate'
       responses:
         "200":
-          description: Éxito en la actualizacion del producto
+          description: Éxito en la actualizacion de la orden
           content:
             application/json:
               schema:
@@ -325,32 +345,32 @@ paths:
               schema:
                 $ref: '#components/responses/forbidden'
         "404":
-          description: Producto no encontrado
+          description: Orden no encontrada
           content:
             application/json:
               schema:
                 $ref: '#components/responses/notFound'
         "500":
-          description: Falla del servidor al actualizar un producto
+          description: Falla del servidor al actualizar una orden
           content:
             application/json:
               schema:
                 $ref: '#components/responses/fatal'
 
     get:
-      summary: Leer los datos de un producto
+      summary: Leer los datos de una orden
       tags:
-        - Product
+        - Order
       parameters:
-        - name: pid
+        - name: oid
           in: path
           required: true
-          description: ObjectId del producto a leer
+          description: ObjectId de la orden a leer
           schema:
             $type: string
       responses:
         "200":
-          description: Éxito al leer el producto
+          description: Éxito al leer la orden
           content:
             application/json:
               schema:
@@ -369,21 +389,21 @@ paths:
                 $ref: '#components/responses/fatal'
 
     delete:
-      summary: Eliminar un producto
+      summary: Eliminar una orden
       tags:
-        - Product
+        - Order
       security:
         - cookieAuth: ["ADMIN"]
       parameters:
-        - name: pid
+        - name: oid
           in: path
           required: true
-          description: ObjectId del producto a eliminar
+          description: ObjectId de la orden a eliminar
           schema:
             $type: string
       responses:
         "200":
-          description: Éxito en borrar el producto
+          description: Éxito al eliminar la orden
           content:
             application/json:
               schema:
@@ -401,13 +421,47 @@ paths:
               schema:
                 $ref: '#components/responses/forbidden'
         "404":
-          description: Producto no encontrado
+          description: Orden no encontrada
           content:
             application/json:
               schema:
                 $ref: '#components/responses/notFound'
         "500":
-          description: Falla del servidor al borrar el producto
+          description: Falla del servidor al borrar la orden
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/fatal'
+
+  /api/orders/user/{user_id}:
+    get:
+      summary: Leer las ordenes correspondiente al id del usuario dado
+      tags:
+        - Order
+      security:
+        - cookieAuth: ["ADMIN"]
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          description: ObjectId del usuario
+          schema:
+            $type: string
+      responses:
+        "200":
+          description: Éxito al leer las ordenes
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/readByUser'
+        "404":
+          description: Documentos no encontrados
+          content:
+            application/json:
+              schema:
+                $ref: '#components/responses/notFound'
+        "500":
+          description: Falla del servidor al leer el documento
           content:
             application/json:
               schema:

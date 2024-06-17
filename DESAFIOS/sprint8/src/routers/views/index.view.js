@@ -1,5 +1,5 @@
 import CustomRouter from "../CustomRouter.js";
-import passCallBack from "../../middlewares/passCallBack.mid.js"
+//import passCallBack from "../../middlewares/passCallBack.mid.js" PARA ORDENES
 
 import dao from "../../data/index.factory.js"
 const { products } = dao
@@ -21,7 +21,7 @@ const productsRouter = productsR.getRouter()
 export default class ViewsRouter extends CustomRouter {
   init() {
     this.router.use("/verify", verifyRouter)
-    this.router.use("/orders", passCallBack("jwt"), ordersRouter)
+    this.router.use("/orders", ordersRouter)
     this.router.use("/sessions", sessionsRouter);
     this.router.use("/products", productsRouter);
     this.read("/", ["PUBLIC"], async (req, res, next) => {
@@ -50,6 +50,15 @@ export default class ViewsRouter extends CustomRouter {
       } catch (error) {
         next(error);
       }
-    });
+    })
+    this.read("/thanks", ["PUBLIC"], async (req, res, next) => {
+        try {
+          return res.render("thanks", {
+            title: "THANKS",
+          });
+        } catch (error) {
+          next(error)
+        }
+    } )
   }
 }

@@ -10,3 +10,280 @@
 [33mWARN[39m: Invalid credentials
 [31mERROR[39m: Invalid credentials
 [33mWARN[39m: Invalid credentials
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/users/undefined not found path
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: POST /api/users/undefined not found path
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "deprecado@coder.com" }
+[33mWARN[39m: POST /api/users/undefined not found path
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "deprecado@coder.com" }
+[33mWARN[39m: POST /api/users/undefined not found path
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "deprecado@coder.com" }
+[33mWARN[39m: POST /api/users/undefined not found path
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "deprecado@coder.com" }
+[33mWARN[39m: POST /api/users/undefined not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: Cannot read properties of undefined (reading 'length')
+[31mERROR[39m: Unexpected token " in JSON at position 0
+[33mWARN[39m: Unexpected token " in JSON at position 0
+[33mWARN[39m: Cannot read properties of undefined (reading 'length')
+[33mWARN[39m: Cannot read properties of undefined (reading 'length')
+[33mWARN[39m: Cannot read properties of undefined (reading 'length')
+[33mWARN[39m: Cannot read properties of undefined (reading 'length')
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "deprecado@coder.com" }
+[33mWARN[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "deprecado@coder.com" }
+[33mWARN[39m: POST /api/users/undefined not found path
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "deprecado@coder.com" }
+[33mWARN[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "deprecado@coder.com" }
+[33mWARN[39m: POST /api/users/undefined not found path
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "deprecado@coder.com" }
+[33mWARN[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "deprecado@coder.com" }
+[33mWARN[39m: POST /api/users/undefined not found path
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "deprecado@coder.com" }
+[33mWARN[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "deprecado@coder.com" }
+[33mWARN[39m: POST /api/users/undefined not found path
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[33mWARN[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[33mWARN[39m: POST /api/products/undefined not found path
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[33mWARN[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[33mWARN[39m: POST /api/products/undefined not found path
+[33mWARN[39m: GET /api/sessions/login not found path
+[33mWARN[39m: GET /api/sessions/login not found path
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: DELETE /api/user/666f403ed87fbbd9c920b76e%0A not found path
+[33mWARN[39m: DELETE /api/user/666f403ed87fbbd9c920b76e%0A not found path
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[33mWARN[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[33mWARN[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[33mWARN[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[33mWARN[39m: POST /api/users/%0A not found path
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[33mWARN[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[33mWARN[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[33mWARN[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[33mWARN[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[33mWARN[39m: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "products"
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "deprecado@coder.com" }
+[33mWARN[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "deprecado@coder.com" }
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: Invalid credentials
+[33mWARN[39m: Invalid credentials
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "Debidoaconfirmacion@gmail.com" }
+[33mWARN[39m: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: "Debidoaconfirmacion@gmail.com" }
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[31mERROR[39m: User already exists
+[33mWARN[39m: User already exists
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /real/?title=&page=2 not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path
+[33mWARN[39m: GET /favicon.ico not found path

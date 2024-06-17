@@ -47,7 +47,7 @@ class UsersController {
         try {
           const data = req.body
           const response = await this.service.create(data)
-          return res.success201(response)
+          return res.success201(response._id)
         } catch (error) {
           return next(error)
         }

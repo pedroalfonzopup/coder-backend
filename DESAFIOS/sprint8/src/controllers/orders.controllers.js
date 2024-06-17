@@ -31,11 +31,20 @@ class OrdersController {
           return next(error);
         }
     } 
+    readByUser = async (req, res, next) => {
+      try {
+        const { user_id } = req.params
+        const one = await this.service.readOne(user_id)
+        return res.success200(one)
+      } catch (error) {
+        return next(error)
+      }
+    }
     create = async (req, res, next) => {
         try {
           const data = req.body;
           const response = await this.service.create(data);
-          return res.success201("order created successfully with id: " + response)
+          return res.success201(response._id)
         } catch (error) {
           return next(error);
         }
@@ -63,5 +72,5 @@ class OrdersController {
 
 export default OrdersController
 const controller = new OrdersController()
-const { read, readOne, create, update, destroy } = controller
-export { read, readOne, create, update, destroy }
+const { read, readOne, create, update, destroy, readByUser } = controller
+export { read, readOne, create, update, destroy, readByUser }

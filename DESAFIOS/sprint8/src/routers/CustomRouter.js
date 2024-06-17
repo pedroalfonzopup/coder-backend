@@ -2,6 +2,7 @@ import { Router } from "express";
 import jwt from "jsonwebtoken";
 import dao from "../data/index.factory.js"
 import errors from "../utils/errors/errors.utils.js";
+import env from "../utils/env.util.js";
 
 const { users } = dao
 
@@ -43,7 +44,7 @@ export default class CustomRouter {
       let token = req.cookies["token"];
       if (!token) return res.error401();
       else {
-        const data = jwt.verify(token, process.env.SECRET_KEY);
+        const data = jwt.verify(token, env.SECRET_KEY);
         if (!data) return res.error400("Bad auth by token!");
         else {
           const { email, role } = data;

@@ -23,7 +23,7 @@ class SessionsController {
           maxAge: 1 * 20 * 60 * 60 * 1000,
           httpOnly: true,
         })
-        .success201("Logged in succesfully!")
+        .success200("Logged in succesfully!")
     } catch (error) {
       return next(error);
     }
@@ -33,7 +33,6 @@ class SessionsController {
       const user = {
         email: req.user.email,
         role: req.user.role,
-        photo: req.user.photo,
       }
       return res.success200(user)
     } catch (error) {

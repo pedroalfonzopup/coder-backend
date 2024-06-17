@@ -1,4 +1,5 @@
 import twilio from "twilio"
+import env from "./env.util.js"
 
 async function sendSms(phone) {
     try {
